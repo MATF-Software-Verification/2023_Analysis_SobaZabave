@@ -1,6 +1,20 @@
 # Analiza projekta SobaZabave
 
-## Uvod
+## Sadržaj
+
+1. [Uvod](#1-uvod)
+2. [Statička analiza koda](#2-statička-analiza-koda)
+   - 2.1 [Cppcheck](#21-cppcheck)
+   - 2.2 Clazy
+3. Testiranje i pokrivenost koda
+4. Dinamička analiza — Sanitizers
+5. Profilisanje performansi — Callgrind
+6. Analiza kompleksnosti — Lizard
+7. Zaključak
+
+---
+
+## 1. Uvod
 
 U ovom radu prikazana je analiza projekta **SobaZabave** primenom različitih alata i tehnika za verifikaciju softvera. Projekat je razvijen u programskom jeziku C++ korišćenjem Qt radnog okvira, a nastao je u okviru kursa Razvoj softvera na Matematičkom fakultetu Univerziteta u Beogradu.
 
@@ -16,13 +30,23 @@ U okviru repozitorijuma za analizu originalni projekat je dodat kao Git podmodul
 
 Pre početka analize provereno je da projekat može uspešno da se prevede i pokrene.
 
+Za analizu projekta biće korišćeno više alata i tehnika kojima će biti obuhvaćeni statička analiza koda, testiranje, dinamička analiza, profilisanje performansi i analiza kompleksnosti.
+
 ---
 
-## Cppcheck
+## 2. Statička analiza koda
+
+Statička analiza koda omogućava pronalaženje potencijalnih problema bez pokretanja programa. Ovakvom analizom mogu se uočiti greške u kodu, korišćenje neinicijalizovanih promenljivih, sumnjive konstrukcije, kao i problemi koji se odnose na stil i kvalitet koda.
+
+U okviru ovog rada za statičku analizu korišćeni su alati **Cppcheck** i **Clazy**.
+
+---
+
+## 2.1 Cppcheck
 
 Prvi alat korišćen za analizu projekta je **Cppcheck**. U pitanju je alat za statičku analizu C i C++ koda koji može da pronađe potencijalne greške bez pokretanja programa. Pored grešaka, prijavljuje i različita upozorenja koja se odnose na stil i kvalitet koda.
 
-Za analizu je korišćena verzija 1.90.
+Za analizu je korišćena verzija **1.90**.
 
 Analiza je automatizovana skriptom `run_cppcheck.sh`:
 
@@ -108,8 +132,44 @@ Prijavljena su i upozorenja za još nekoliko neinicijalizovanih članova, među 
 
 Deo prijavljenih rezultata odnosi se na stil i moguće poboljšanje kvaliteta koda i ne predstavlja nužno grešku u radu programa. Zbog toga su u prethodnim delovima detaljnije analizirana dva nalaza koja su ocenjena kao značajnija.
 
-### Zaključak
+### Zaključak Cppcheck analize
 
 Cppcheck analiza je pokazala više upozorenja različitog značaja. Pored preporuka vezanih za stil koda, pronađen je duplirani uslov u implementaciji igre Mice, čijom proverom je uočena greška u izboru igrača čiji se broj figura proverava. Takođe su pronađeni članovi klase `Client` koji nisu inicijalizovani u konstruktoru.
 
 Ovi rezultati pokazuju da statička analiza može da ukaže na potencijalne probleme u kodu bez potrebe za pokretanjem same aplikacije.
+
+---
+
+## 2.2 Clazy
+
+*Ovo poglavlje biće dopunjeno nakon Clazy analize.*
+
+---
+
+## 3. Testiranje i pokrivenost koda
+
+*Ovo poglavlje biće dopunjeno nakon analize postojećih i dodatih testova i merenja pokrivenosti koda.*
+
+---
+
+## 4. Dinamička analiza — Sanitizers
+
+*Ovo poglavlje biće dopunjeno nakon analize.*
+
+---
+
+## 5. Profilisanje performansi — Callgrind
+
+*Ovo poglavlje biće dopunjeno nakon analize.*
+
+---
+
+## 6. Analiza kompleksnosti — Lizard
+
+*Ovo poglavlje biće dopunjeno nakon analize.*
+
+---
+
+## 7. Zaključak
+
+*Zaključak će biti dodat nakon završetka svih analiza.*
