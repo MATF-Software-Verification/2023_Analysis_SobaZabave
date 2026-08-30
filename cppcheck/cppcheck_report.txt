@@ -1,0 +1,230 @@
+../11-SobaZabave/SobaZabave/src/Client/include/field.h:10:3: style: Class 'Field' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+  Field(QPointF m_position);
+  ^
+../11-SobaZabave/SobaZabave/src/Client/src/client.cpp:3:9: warning: Member variable 'Client::yourTurn' is not initialized in the constructor. [uninitMemberVar]
+Client::Client(QObject *parent) : QObject(parent) {
+        ^
+../11-SobaZabave/SobaZabave/src/Client/src/client.cpp:3:9: warning: Member variable 'Client::client1_ind' is not initialized in the constructor. [uninitMemberVar]
+Client::Client(QObject *parent) : QObject(parent) {
+        ^
+../11-SobaZabave/SobaZabave/src/Client/src/client.cpp:3:9: warning: Member variable 'Client::client2_ind' is not initialized in the constructor. [uninitMemberVar]
+Client::Client(QObject *parent) : QObject(parent) {
+        ^
+../11-SobaZabave/SobaZabave/src/Client/src/field.cpp:3:22: style:inconclusive: Function 'Field' argument 1 names different: declaration 'm_position' definition 'position'. [funcArgNamesDifferent]
+Field::Field(QPointF position) : QGraphicsItem(), m_position(position) {
+                     ^
+../11-SobaZabave/SobaZabave/src/Client/include/field.h:10:17: note: Function 'Field' argument 1 names different: declaration 'm_position' definition 'position'.
+  Field(QPointF m_position);
+                ^
+../11-SobaZabave/SobaZabave/src/Client/src/field.cpp:3:22: note: Function 'Field' argument 1 names different: declaration 'm_position' definition 'position'.
+Field::Field(QPointF position) : QGraphicsItem(), m_position(position) {
+                     ^
+../11-SobaZabave/SobaZabave/src/Client/include/gamesettings.h:13:18: style:inconclusive: Technically the member function 'GameSettings::getdifficultyLevel' can be const. [functionConst]
+  GameDifficulty getdifficultyLevel();
+                 ^
+../11-SobaZabave/SobaZabave/src/Client/src/gamesettings.cpp:20:20: note: Technically the member function 'GameSettings::getdifficultyLevel' can be const.
+auto GameSettings::getdifficultyLevel() -> GameSettings::GameDifficulty {
+                   ^
+../11-SobaZabave/SobaZabave/src/Client/include/gamesettings.h:13:18: note: Technically the member function 'GameSettings::getdifficultyLevel' can be const.
+  GameDifficulty getdifficultyLevel();
+                 ^
+../11-SobaZabave/SobaZabave/src/Client/include/gamesettings.h:14:12: style:inconclusive: Technically the member function 'GameSettings::getgameType' can be const. [functionConst]
+  GameType getgameType();
+           ^
+../11-SobaZabave/SobaZabave/src/Client/src/gamesettings.cpp:18:20: note: Technically the member function 'GameSettings::getgameType' can be const.
+auto GameSettings::getgameType() -> GameSettings::GameType { return gameType; }
+                   ^
+../11-SobaZabave/SobaZabave/src/Client/include/gamesettings.h:14:12: note: Technically the member function 'GameSettings::getgameType' can be const.
+  GameType getgameType();
+           ^
+../11-SobaZabave/SobaZabave/src/Client/src/miceboard.cpp:49:28: performance:inconclusive: Use const reference for 'validMoves' to avoid unnecessary data copying. [redundantCopyLocalConst]
+  const unordered_set<int> validMoves = getValidMovementsPhase0and2();
+                           ^
+../11-SobaZabave/SobaZabave/src/Client/include/micefield.h:8:3: style: Class 'MiceField' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+  MiceField(QPointF position);
+  ^
+../11-SobaZabave/SobaZabave/src/Client/src/micegame.cpp:5:11: warning: Member variable 'MiceGame::m_moveIndicator' is not initialized in the constructor. [uninitMemberVar]
+MiceGame::MiceGame()
+          ^
+../11-SobaZabave/SobaZabave/src/Client/src/micegame.cpp:5:11: warning: Member variable 'MiceGame::m_source' is not initialized in the constructor. [uninitMemberVar]
+MiceGame::MiceGame()
+          ^
+../11-SobaZabave/SobaZabave/src/Client/src/micegame.cpp:5:11: warning: Member variable 'MiceGame::m_destination' is not initialized in the constructor. [uninitMemberVar]
+MiceGame::MiceGame()
+          ^
+../11-SobaZabave/SobaZabave/src/Client/include/micegame.h:32:8: performance:inconclusive: Technically the member function 'MiceGame::showMessageBox' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  void showMessageBox(QString content) const;
+       ^
+../11-SobaZabave/SobaZabave/src/Client/src/micegame.cpp:297:16: note: Technically the member function 'MiceGame::showMessageBox' can be static (but you may consider moving to unnamed namespace).
+void MiceGame::showMessageBox(QString content) const {
+               ^
+../11-SobaZabave/SobaZabave/src/Client/include/micegame.h:32:8: note: Technically the member function 'MiceGame::showMessageBox' can be static (but you may consider moving to unnamed namespace).
+  void showMessageBox(QString content) const;
+       ^
+../11-SobaZabave/SobaZabave/src/Client/include/micegame.h:77:7: performance:inconclusive: Technically the member function 'MiceGame::getPositionSquare' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  int getPositionSquare(const int position) const;
+      ^
+../11-SobaZabave/SobaZabave/src/Client/src/micegame.cpp:249:16: note: Technically the member function 'MiceGame::getPositionSquare' can be static (but you may consider moving to unnamed namespace).
+auto MiceGame::getPositionSquare(const int position) const -> int {
+               ^
+../11-SobaZabave/SobaZabave/src/Client/include/micegame.h:77:7: note: Technically the member function 'MiceGame::getPositionSquare' can be static (but you may consider moving to unnamed namespace).
+  int getPositionSquare(const int position) const;
+      ^
+../11-SobaZabave/SobaZabave/src/Client/include/player.h:9:3: style: Class 'Player' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+  Player(int id);
+  ^
+../11-SobaZabave/SobaZabave/src/Client/include/miceplayer.h:9:3: style: Class 'MicePlayer' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+  MicePlayer(int id);
+  ^
+../11-SobaZabave/SobaZabave/src/Client/src/micegame.cpp:92:33: style: The if condition is the same as the previous if condition [duplicateCondition]
+  if (m_player2->numOfFigures() == 3) {
+                                ^
+../11-SobaZabave/SobaZabave/src/Client/src/micegame.cpp:88:33: note: First condition
+  if (m_player2->numOfFigures() == 3) {
+                                ^
+../11-SobaZabave/SobaZabave/src/Client/src/micegame.cpp:92:33: note: Second condition
+  if (m_player2->numOfFigures() == 3) {
+                                ^
+../11-SobaZabave/SobaZabave/src/Client/include/othellofield.h:8:3: style: Class 'OthelloField' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+  OthelloField(QPointF position);
+  ^
+../11-SobaZabave/SobaZabave/src/Client/include/othellogame.h:21:7: style:inconclusive: Technically the member function 'OthelloGame::get_next_move' can be const. [functionConst]
+  int get_next_move();
+      ^
+../11-SobaZabave/SobaZabave/src/Client/src/othellogame.cpp:13:19: note: Technically the member function 'OthelloGame::get_next_move' can be const.
+auto OthelloGame::get_next_move() -> int {
+                  ^
+../11-SobaZabave/SobaZabave/src/Client/include/othellogame.h:21:7: note: Technically the member function 'OthelloGame::get_next_move' can be const.
+  int get_next_move();
+      ^
+../11-SobaZabave/SobaZabave/src/Client/include/othellogame.h:25:16: style:inconclusive: Technically the member function 'OthelloGame::getGameSettings' can be const. [functionConst]
+  GameSettings getGameSettings();
+               ^
+../11-SobaZabave/SobaZabave/src/Client/src/othellogame.cpp:11:19: note: Technically the member function 'OthelloGame::getGameSettings' can be const.
+auto OthelloGame::getGameSettings() -> GameSettings { return gameSettings; }
+                  ^
+../11-SobaZabave/SobaZabave/src/Client/include/othellogame.h:25:16: note: Technically the member function 'OthelloGame::getGameSettings' can be const.
+  GameSettings getGameSettings();
+               ^
+../11-SobaZabave/SobaZabave/src/Client/include/othellogame.h:26:8: performance:inconclusive: Technically the member function 'OthelloGame::showMessageBox' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  void showMessageBox(QString content) const;
+       ^
+../11-SobaZabave/SobaZabave/src/Client/src/othellogame.cpp:50:19: note: Technically the member function 'OthelloGame::showMessageBox' can be static (but you may consider moving to unnamed namespace).
+void OthelloGame::showMessageBox(QString content) const {
+                  ^
+../11-SobaZabave/SobaZabave/src/Client/include/othellogame.h:26:8: note: Technically the member function 'OthelloGame::showMessageBox' can be static (but you may consider moving to unnamed namespace).
+  void showMessageBox(QString content) const;
+       ^
+../11-SobaZabave/SobaZabave/src/Client/include/othellominmax.h:13:3: style: Class 'OthelloMinMax' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+  OthelloMinMax(GameSettings &gs);
+  ^
+../11-SobaZabave/SobaZabave/src/Client/include/othelloplayer.h:8:3: style: Class 'OthelloPlayer' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+  OthelloPlayer(int id);
+  ^
+../11-SobaZabave/SobaZabave/src/Client/include/othellogame.h:16:3: style: Class 'OthelloGame' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+  OthelloGame(GameSettings &gs);
+  ^
+../11-SobaZabave/SobaZabave/src/Client/src/othellogamewindow.cpp:114:14: style: Variable 'field' is assigned a value that is never used. [unreadVariable]
+  auto field = static_cast<OthelloField *>(m_boardScene->m_fields[0]);
+             ^
+../11-SobaZabave/SobaZabave/src/Client/include/othellostate.h:26:19: performance:inconclusive: Technically the member function 'Othellostate::getRowAndCollumnFromMove' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  QPair<int, int> getRowAndCollumnFromMove(int move);
+                  ^
+../11-SobaZabave/SobaZabave/src/Client/src/othellostate.cpp:33:20: note: Technically the member function 'Othellostate::getRowAndCollumnFromMove' can be static (but you may consider moving to unnamed namespace).
+auto Othellostate::getRowAndCollumnFromMove(int move) -> QPair<int, int> {
+                   ^
+../11-SobaZabave/SobaZabave/src/Client/include/othellostate.h:26:19: note: Technically the member function 'Othellostate::getRowAndCollumnFromMove' can be static (but you may consider moving to unnamed namespace).
+  QPair<int, int> getRowAndCollumnFromMove(int move);
+                  ^
+../11-SobaZabave/SobaZabave/src/Client/src/othellostatecontroller.cpp:39:10: style: The scope of the variable 'flipDirection' can be reduced. [variableScope]
+    bool flipDirection = false;
+         ^
+../11-SobaZabave/SobaZabave/src/Client/src/player.cpp:3:9: warning: Member variable 'Player::m_numOfFigures' is not initialized in the constructor. [uninitMemberVar]
+Player::Player(int id) : m_id(id) {}
+        ^
+../11-SobaZabave/SobaZabave/src/Server/src/server.cpp:51:9: warning:inconclusive: Either the condition 'if(socket)' is redundant or there is possible null pointer dereference: socket. [nullPointerRedundantCheck]
+        socket->write("You are client2");
+        ^
+../11-SobaZabave/SobaZabave/src/Server/src/server.cpp:34:7: note: Assuming that condition 'if(socket)' is not redundant
+    if(socket)
+      ^
+../11-SobaZabave/SobaZabave/src/Server/src/server.cpp:32:55: note: Assignment 'socket=server->nextPendingConnection()', assigned value is 0
+    QTcpSocket *socket = server->nextPendingConnection();
+                                                      ^
+../11-SobaZabave/SobaZabave/src/Server/src/server.cpp:51:9: note: Null pointer dereference
+        socket->write("You are client2");
+        ^
+../11-SobaZabave/SobaZabave/src/build-Client-Desktop-Debug/moc_boardscene.cpp:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+../11-SobaZabave/SobaZabave/src/build-Client-Desktop-Debug/moc_client.cpp:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+../11-SobaZabave/SobaZabave/src/build-Client-Desktop-Debug/moc_mainwindow.cpp:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+../11-SobaZabave/SobaZabave/src/build-Client-Desktop-Debug/moc_micegamewindow.cpp:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+../11-SobaZabave/SobaZabave/src/build-Client-Desktop-Debug/moc_micegamewindowlocal.cpp:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+../11-SobaZabave/SobaZabave/src/build-Client-Desktop-Debug/moc_micegamewindowserver.cpp:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+../11-SobaZabave/SobaZabave/src/build-Client-Desktop-Debug/moc_othellogamewindow.cpp:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+../11-SobaZabave/SobaZabave/src/build-Client-Desktop-Debug/moc_settings.cpp:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+../11-SobaZabave/SobaZabave/src/build-Client-Desktop-Debug/qrc_resources.cpp:29476:0: information: Skipping configuration 'QT_NAMESPACE' since the value of 'QT_NAMESPACE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+namespace QT_NAMESPACE {
+^
+../11-SobaZabave/SobaZabave/src/build-Client-Desktop-Debug/qrc_resources.cpp:29490:0: information: Skipping configuration 'QT_NAMESPACE' since the value of 'QT_NAMESPACE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    QT_RCC_PREPEND_NAMESPACE(qRegisterResourceData)
+^
+../11-SobaZabave/SobaZabave/src/build-Client-Desktop-Debug/qrc_resources.cpp:29498:0: information: Skipping configuration 'QT_NAMESPACE' since the value of 'QT_NAMESPACE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    QT_RCC_PREPEND_NAMESPACE(qUnregisterResourceData)
+^
+../11-SobaZabave/SobaZabave/src/build-Server-Desktop-Debug/moc_server.cpp:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+../11-SobaZabave/SobaZabave/src/Client/src/field.cpp:9:0: style: The function 'boundingRect' is never used. [unusedFunction]
+
+^
+../11-SobaZabave/SobaZabave/src/Client/src/othellogame.cpp:11:0: style: The function 'getGameSettings' is never used. [unusedFunction]
+
+^
+../11-SobaZabave/SobaZabave/src/Client/src/miceboard.cpp:14:0: style: The function 'getGraph' is never used. [unusedFunction]
+
+^
+../11-SobaZabave/SobaZabave/src/Client/src/micegamewindow.cpp:23:0: style: The function 'miceGame' is never used. [unusedFunction]
+
+^
+../11-SobaZabave/SobaZabave/src/Client/src/micegamewindow.cpp:73:0: style: The function 'on_btBack_clicked' is never used. [unusedFunction]
+
+^
+../11-SobaZabave/SobaZabave/src/Client/src/othellogamewindow.cpp:153:0: style: The function 'on_homeButtonOthelloPlay_clicked' is never used. [unusedFunction]
+
+^
+../11-SobaZabave/SobaZabave/src/Client/src/micefield.cpp:5:0: style: The function 'paint' is never used. [unusedFunction]
+
+^
+../11-SobaZabave/SobaZabave/src/Client/src/micegame.cpp:134:0: style: The function 'setCurrentPlayer' is never used. [unusedFunction]
+
+^
+../11-SobaZabave/SobaZabave/src/Client/src/player.cpp:7:0: style: The function 'setId' is never used. [unusedFunction]
+
+^
+../11-SobaZabave/SobaZabave/src/Client/src/micegame.cpp:144:0: style: The function 'setPlayer1' is never used. [unusedFunction]
+
+^
+../11-SobaZabave/SobaZabave/src/Client/src/micegame.cpp:140:0: style: The function 'setPlayer2' is never used. [unusedFunction]
+
+^
+../11-SobaZabave/SobaZabave/src/Client/src/micegame.cpp:146:0: style: The function 'source' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
