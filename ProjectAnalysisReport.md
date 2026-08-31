@@ -5,7 +5,7 @@
 1. [Uvod](#1-uvod)
 2. [Statička analiza koda](#2-statička-analiza-koda)
    - 2.1 [Cppcheck](#21-cppcheck)
-   - 2.2 Clazy
+   - 2.2 [Clazy](#22-clazy)
 3. Testiranje i pokrivenost koda
 4. Dinamička analiza — Sanitizers
 5. Profilisanje performansi — Callgrind
@@ -140,8 +140,6 @@ Ovi rezultati pokazuju da statička analiza može da ukaže na potencijalne prob
 
 ---
 
-
-
 ## 2.2 Clazy
 
 Drugi alat korišćen za statičku analizu je **Clazy**, statički analizator zasnovan na Clang-u koji je namenjen pronalaženju problema specifičnih za Qt aplikacije. U analizi je korišćena verzija **1.6**.
@@ -187,9 +185,17 @@ Kompletan izlaz analize čuva se u fajlu `temp_report.txt`, dok se izdvojena upo
 
 ![Pokretanje Clazy analize](screenshots/clazy1.png)
 
+*Slika 6: Pokretanje Clazy analize i uspešno kreiranje izveštaja*
+
 ### Iteriranje kroz Qt kontejnere
 
-Clazy je prijavio upozorenja u fajlu `boardscene.cpp` na mestima gde se koristi range-based `for` petlja nad `QVector` kontejnerima:
+Clazy je prijavio upozorenja u fajlu `boardscene.cpp` na linijama 6 i 11, na mestima gde se koristi range-based `for` petlja nad `QVector` kontejnerima.
+
+![Clazy upozorenje za range-loop](screenshots/clazy2.png)
+
+*Slika 7: Clazy upozorenja za iteriranje kroz `QVector` kontejnere*
+
+Proverom prijavljenih linija izvornog koda vidi se da se upozorenja odnose na sledeće dve petlje:
 
 ```cpp
 for (auto field : m_fields) {
@@ -201,11 +207,11 @@ for (auto line : m_lines) {
 }
 ```
 
-Alat upozorava da ovakav način iteriranja može dovesti do odvajanja (*detach*) Qt kontejnera i potencijalno nepotrebnog kopiranja podataka. Ovo upozorenje ne predstavlja nužno funkcionalnu grešku, već ukazuje na potencijalno neefikasno korišćenje Qt kontejnera.
+![Range-based for petlje u izvornom kodu](screenshots/clazy3.png)
 
-![Clazy upozorenje za range-loop](screenshots/clazy2.png)
+*Slika 8: Deo destruktora klase `BoardScene` na koji se odnose Clazy upozorenja*
 
-![Kod na koji se odnosi upozorenje](screenshots/clazy3.png)
+Clazy upozorava da ovakav način iteriranja može dovesti do odvajanja (*detach*) Qt kontejnera i potencijalno nepotrebnog kopiranja podataka. Ovo upozorenje ne predstavlja nužno funkcionalnu grešku, već ukazuje na potencijalno neefikasno korišćenje Qt kontejnera.
 
 ### Implicitna konverzija tipova
 
