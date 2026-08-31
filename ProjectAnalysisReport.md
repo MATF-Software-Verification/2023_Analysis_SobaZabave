@@ -1,16 +1,18 @@
 # Analiza projekta SobaZabave
 
+
+
 ## Sadržaj
 
 1. [Uvod](#1-uvod)
 2. [Statička analiza koda](#2-statička-analiza-koda)
    - 2.1 [Cppcheck](#21-cppcheck)
    - 2.2 [Clazy](#22-clazy)
-3. Testiranje i pokrivenost koda
-4. Dinamička analiza — Sanitizers
-5. Profilisanje performansi — Callgrind
-6. Analiza kompleksnosti — Lizard
-7. Zaključak
+3. [Analiza kompleksnosti — Lizard](#3-analiza-kompleksnosti--lizard)
+4. [Dinamička analiza — ASan i UBSan](#4-dinamička-analiza--asan-i-ubsan)
+5. [Debagovanje — GDB](#5-debagovanje--gdb)
+6. [Profilisanje performansi — Callgrind](#6-profilisanje-performansi--callgrind)
+7. [Zaključak](#7-zaključak)
 
 ---
 
@@ -30,7 +32,8 @@ U okviru repozitorijuma za analizu originalni projekat je dodat kao Git podmodul
 
 Pre početka analize provereno je da projekat može uspešno da se prevede i pokrene.
 
-Za analizu projekta biće korišćeno više alata i tehnika kojima će biti obuhvaćeni statička analiza koda, testiranje, dinamička analiza, profilisanje performansi i analiza kompleksnosti.
+
+Za analizu projekta biće korišćeno više alata i tehnika kojima će biti obuhvaćeni statička analiza koda, dinamička analiza, profilisanje performansi i analiza kompleksnosti.
 
 ---
 
@@ -231,21 +234,78 @@ const double detailedPositioning = 3.6;
 
 Ovaj nalaz predstavlja potencijalni gubitak preciznosti i pokazuje mesto u kodu koje bi trebalo dodatno proveriti u odnosu na nameravano ponašanje programa.
 
+
+
 ### Ostala upozorenja
 
-Clazy je prijavio i veći broj upozorenja vezanih za Qt slotove čija imena odgovaraju obrascu `on_foo_bar`. Alat upozorava da ovakav način automatskog povezivanja signala i slotova može biti podložan greškama.
+Clazy je prijavio i veći broj upozorenja vezanih za Qt slotove čija imena odgovaraju obrascu `on_foo_bar`. U izveštaju se za ovakve slotove pojavljuje upozorenje `connect-by-name`, uz napomenu da ovakav način povezivanja može biti podložan greškama. Ova upozorenja pojavljuju se u više klasa korisničkog interfejsa, među kojima su `MiceGameWindow`, `OthelloGameWindow`, `Settings` i `MainWindow`.
 
-Pored toga, pronađena su upozorenja vezana za neiskorišćene parametre i način inicijalizacije pojedinih objekata. Ova upozorenja uglavnom predstavljaju preporuke za poboljšanje kvaliteta i održivosti koda i nisu detaljnije analizirana.
+Pored toga, prijavljena su i upozorenja za neiskorišćene parametre u pojedinim funkcijama i način inicijalizacije pojedinih objekata. Ova upozorenja uglavnom predstavljaju preporuke za poboljšanje kvaliteta i održivosti koda i nisu detaljnije analizirana.
 
 ### Zaključak Clazy analize
 
 Clazy analiza je pokazala nekoliko potencijalnih problema i preporuka specifičnih za Qt kod. Kao najzanimljiviji nalazi izdvojeni su potencijalno neefikasno iteriranje kroz Qt kontejnere i implicitna konverzija vrednosti `3.6` u celobrojni tip. Projekat je tokom Clazy analize uspešno preveden, a pronađena upozorenja ukazuju na mesta u kodu koja bi mogla biti unapređena.
 
 ---
+## 3. Analiza kompleksnosti — Lizard
 
-## 3. Testiranje i pokrivenost koda
+Za analizu kompleksnosti koda korišćen je alat **Lizard**. Ovaj alat računa različite metrike izvornog koda, među kojima su broj linija koda (NLOC), broj parametara i ciklomatska kompleksnost (CCN).
 
-*Ovo poglavlje biće dopunjeno nakon analize postojećih i dodatih testova i merenja pokrivenosti koda.*
+Za analizu je korišćena verzija **1.24.0**, koja je instalirana pomoću `pip3`.
+
+Analiza je automatizovana skriptom `run_lizard.sh`:
+
+```bash
+#!/bin/bash
+
+REPORT_FILE="lizard_report.txt"
+
+echo "Running Lizard analysis..."
+
+lizard \
+    ../11-SobaZabave/SobaZabave/src/Client/src \
+    ../11-SobaZabave/SobaZabave/src/Client/include \
+    ../11-SobaZabave/SobaZabave/src/Server/src \
+    ../11-SobaZabave/SobaZabave/src/Server/include \
+    > "$REPORT_FILE"
+
+echo "Lizard analysis finished."
+echo "Report saved to: $REPORT_FILE"
+```
+
+Analizirani su izvorni i zaglavni fajlovi klijentskog i serverskog dela projekta, a rezultat analize čuva se u fajlu `lizard_report.txt`.
+
+![Pokretanje Lizard analize](screenshots/lizard1.png)
+
+*Slika 9: Pokretanje Lizard analize*
+
+### Rezultati analize
+
+Lizard je analizirao ukupno **51 fajl** i pronašao **188 funkcija**. Ukupan broj linija koda koje alat računa kao NLOC iznosi **2038**, dok je prosečna ciklomatska kompleksnost funkcija **2.0**.
+
+Nijedna funkcija nije prekoračila podrazumevani Lizard prag za ciklomatsku kompleksnost, koji iznosi **CCN > 15**, pa alat nije prijavio upozorenja.
+
+![Rezultat Lizard analize](screenshots/lizard2.png)
+
+*Slika 10: Rezultat Lizard analize*
+
+Iako prag nije prekoračen, funkcija sa najvećom ciklomatskom kompleksnošću u analiziranom kodu je `OthelloBoardScene::addAllFields`, za koju je dobijena vrednost **CCN = 12**.
+
+### Funkcija sa najvećom kompleksnošću
+
+Proverom funkcije `OthelloBoardScene::addAllFields` vidi se da sadrži dve ugnježdene `for` petlje, kao i više složenih uslova povezanih operatorima `&&` i `||`.
+
+![Funkcija addAllFields](screenshots/lizard3.png)
+
+*Slika 11: Funkcija `OthelloBoardScene::addAllFields`*
+
+Ovakva struktura dovodi do većeg broja mogućih puteva izvršavanja i samim tim do veće ciklomatske kompleksnosti. Ipak, dobijena vrednost 12 je i dalje ispod podrazumevanog praga koji Lizard koristi za prijavljivanje upozorenja.
+
+### Zaključak Lizard analize
+
+Lizard analiza nije pokazala funkcije koje prekoračuju podrazumevane pragove kompleksnosti. Prosečna vrednost CCN je relativno niska, dok se kao funkcija sa najvećom izmerenom kompleksnošću izdvaja `OthelloBoardScene::addAllFields`.
+
+Rezultati pokazuju da u analiziranom projektu nema izrazito kompleksnih funkcija prema podrazumevanim kriterijumima alata Lizard.
 
 ---
 
