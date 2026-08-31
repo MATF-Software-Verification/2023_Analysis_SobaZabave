@@ -140,9 +140,100 @@ Ovi rezultati pokazuju da statička analiza može da ukaže na potencijalne prob
 
 ---
 
+
+
 ## 2.2 Clazy
 
-*Ovo poglavlje biće dopunjeno nakon Clazy analize.*
+Drugi alat korišćen za statičku analizu je **Clazy**, statički analizator zasnovan na Clang-u koji je namenjen pronalaženju problema specifičnih za Qt aplikacije. U analizi je korišćena verzija **1.6**.
+
+Clazy je pokrenut kao kompajler tokom izgradnje klijentskog dela projekta. Na taj način se analiza izvršava zajedno sa prevođenjem izvornog koda.
+
+Za pokretanje analize korišćena je sledeća skripta:
+
+```bash
+#!/bin/bash
+
+REPORT_FILE="$(pwd)/clazy_report.txt"
+TEMP_REPORT="$(pwd)/temp_report.txt"
+
+cd ../11-SobaZabave/SobaZabave/src/Client
+
+echo "Cleaning old build..."
+rm -rf build_clazy
+
+echo "Removing old reports..."
+rm -f "$REPORT_FILE"
+rm -f "$TEMP_REPORT"
+
+export CLAZY_CHECKS="level1"
+
+mkdir build_clazy
+cd build_clazy
+
+echo "Running qmake with Clazy..."
+qmake ../Client.pro QMAKE_CXX=clazy QMAKE_CC=clang
+
+echo "Building project with Clazy analysis..."
+make -j$(nproc) 2> "$TEMP_REPORT"
+
+echo "Saving Clazy warnings..."
+grep -E "warning:|clazy" "$TEMP_REPORT" > "$REPORT_FILE"
+
+echo "Clazy analysis finished."
+echo "Report saved to: $REPORT_FILE"
+```
+
+Kompletan izlaz analize čuva se u fajlu `temp_report.txt`, dok se izdvojena upozorenja čuvaju u fajlu `clazy_report.txt`.
+
+![Pokretanje Clazy analize](screenshots/clazy1.png)
+
+### Iteriranje kroz Qt kontejnere
+
+Clazy je prijavio upozorenja u fajlu `boardscene.cpp` na mestima gde se koristi range-based `for` petlja nad `QVector` kontejnerima:
+
+```cpp
+for (auto field : m_fields) {
+    delete field;
+}
+
+for (auto line : m_lines) {
+    delete line;
+}
+```
+
+Alat upozorava da ovakav način iteriranja može dovesti do odvajanja (*detach*) Qt kontejnera i potencijalno nepotrebnog kopiranja podataka. Ovo upozorenje ne predstavlja nužno funkcionalnu grešku, već ukazuje na potencijalno neefikasno korišćenje Qt kontejnera.
+
+![Clazy upozorenje za range-loop](screenshots/clazy2.png)
+
+![Kod na koji se odnosi upozorenje](screenshots/clazy3.png)
+
+### Implicitna konverzija tipova
+
+Još jedno korisno upozorenje pronađeno je u fajlu `othelloboardscene.h`. U kodu se nalazi sledeća deklaracija:
+
+```cpp
+const int detailedPositioning = 3.6;
+```
+
+Promenljiva `detailedPositioning` deklarisana je kao `int`, dok joj se dodeljuje decimalna vrednost `3.6`. Prilikom implicitne konverzije decimalni deo se odbacuje, tako da vrednost promenljive postaje `3`.
+
+Ukoliko je namera autora bila da se sačuva vrednost `3.6`, promenljiva bi mogla biti deklarisana korišćenjem tipa `double`:
+
+```cpp
+const double detailedPositioning = 3.6;
+```
+
+Ovaj nalaz predstavlja potencijalni gubitak preciznosti i pokazuje mesto u kodu koje bi trebalo dodatno proveriti u odnosu na nameravano ponašanje programa.
+
+### Ostala upozorenja
+
+Clazy je prijavio i veći broj upozorenja vezanih za Qt slotove čija imena odgovaraju obrascu `on_foo_bar`. Alat upozorava da ovakav način automatskog povezivanja signala i slotova može biti podložan greškama.
+
+Pored toga, pronađena su upozorenja vezana za neiskorišćene parametre i način inicijalizacije pojedinih objekata. Ova upozorenja uglavnom predstavljaju preporuke za poboljšanje kvaliteta i održivosti koda i nisu detaljnije analizirana.
+
+### Zaključak Clazy analize
+
+Clazy analiza je pokazala nekoliko potencijalnih problema i preporuka specifičnih za Qt kod. Kao najzanimljiviji nalazi izdvojeni su potencijalno neefikasno iteriranje kroz Qt kontejnere i implicitna konverzija vrednosti `3.6` u celobrojni tip. Projekat je tokom Clazy analize uspešno preveden, a pronađena upozorenja ukazuju na mesta u kodu koja bi mogla biti unapređena.
 
 ---
 

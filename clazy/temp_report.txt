@@ -1,0 +1,399 @@
+../src/boardscene.cpp:6:3: warning: c++11 range-loop might detach Qt container (QVector) [-Wclazy-range-loop]
+  for (auto field : m_fields) {
+  ^
+                    qAsConst( )
+../src/boardscene.cpp:11:3: warning: c++11 range-loop might detach Qt container (QVector) [-Wclazy-range-loop]
+  for (auto line : m_lines) {
+  ^
+                   qAsConst( )
+2 warnings generated.
+In file included from ../src/main.cpp:1:
+In file included from ../../Client/include/mainwindow.h:7:
+In file included from ../../Client/include/othellogamewindow.h:4:
+../../Client/include/othelloboardscene.h:22:35: warning: implicit conversion from 'double' to 'int' changes value from 3.6 to 3 [-Wliteral-conversion]
+  const int detailedPositioning = 3.6;
+                                ~ ^~~
+In file included from ../src/mainwindow.cpp:1:
+In file included from ../../Client/include/mainwindow.h:7:
+In file included from ../../Client/include/othellogamewindow.h:4:
+../../Client/include/othelloboardscene.h:22:35: warning: implicit conversion from 'double' to 'int' changes value from 3.6 to 3 [-Wliteral-conversion]
+  const int detailedPositioning = 3.6;
+                                ~ ^~~
+In file included from ../src/main.cpp:1:
+In file included from ../../Client/include/mainwindow.h:7:
+In file included from ../../Client/include/othellogamewindow.h:5:
+In file included from ../../Client/include/othellogame.h:5:
+In file included from ../../Client/include/../include/othellominmax.h:5:
+../../Client/include/../include/othellostate.h:24:22: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+  int table[8][8] = {0};
+                     ^
+                     {}
+In file included from ../src/mainwindow.cpp:1:
+In file included from ../../Client/include/mainwindow.h:7:
+In file included from ../../Client/include/othellogamewindow.h:5:
+In file included from ../../Client/include/othellogame.h:5:
+In file included from ../../Client/include/../include/othellominmax.h:5:
+../../Client/include/../include/othellostate.h:24:22: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+  int table[8][8] = {0};
+                     ^
+                     {}
+../src/miceboardscene.cpp:69:54: warning: unused parameter 'viewWidth' [-Wunused-parameter]
+void MiceBoardScene::addAllLines(qreal offset, qreal viewWidth,
+                                                     ^
+../src/miceboardscene.cpp:70:40: warning: unused parameter 'viewHeight' [-Wunused-parameter]
+                                 qreal viewHeight) {
+                                       ^
+2 warnings generated.
+In file included from ../src/main.cpp:1:
+In file included from ../../Client/include/mainwindow.h:5:
+In file included from ../../Client/include/micegamewindowlocal.h:7:
+../../Client/include/micegamewindow.h:29:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_btBack_clicked();
+  ^
+In file included from ../src/main.cpp:1:
+In file included from ../../Client/include/mainwindow.h:7:
+../../Client/include/othellogamewindow.h:28:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_homeButtonOthelloPlay_clicked();
+  ^
+In file included from ../src/main.cpp:1:
+In file included from ../../Client/include/mainwindow.h:8:
+../../Client/include/settings.h:31:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_backButtonSettings_clicked();
+  ^
+../../Client/include/settings.h:32:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_difficultyButton_clicked();
+  ^
+../../Client/include/settings.h:33:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_spinBox_valueChanged(const QString &arg1);
+  ^
+In file included from ../src/main.cpp:1:
+../../Client/include/mainwindow.h:33:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_logInButton_clicked();
+  ^
+../../Client/include/mainwindow.h:34:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_radioButtonMPMiceGame_clicked();
+  ^
+../../Client/include/mainwindow.h:35:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_radioButtonLocalMiceGame_clicked();
+  ^
+../../Client/include/mainwindow.h:36:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_instructionsButton_clicked();
+  ^
+../../Client/include/mainwindow.h:37:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_backButtonCG_clicked();
+  ^
+../../Client/include/mainwindow.h:38:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_othelloButtonCG_clicked();
+  ^
+../../Client/include/mainwindow.h:39:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_miceButtonCG_clicked();
+  ^
+../../Client/include/mainwindow.h:40:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_settingsButton_clicked();
+  ^
+../../Client/include/mainwindow.h:41:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_backButtonOG_clicked();
+  ^
+../../Client/include/mainwindow.h:42:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_playButtonOthello_clicked();
+  ^
+../../Client/include/mainwindow.h:43:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_backButtonMice_clicked();
+  ^
+../../Client/include/mainwindow.h:44:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_playButtonMice_clicked();
+  ^
+../../Client/include/mainwindow.h:45:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_backButtonInstructions_clicked();
+  ^
+../../Client/include/mainwindow.h:46:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_radioButtonLocalOthelloGame_clicked();
+  ^
+../../Client/include/mainwindow.h:47:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_radioButtonSingleOthelloGame_clicked();
+  ^
+22 warnings generated.
+In file included from ../src/mainwindow.cpp:1:
+In file included from ../../Client/include/mainwindow.h:5:
+In file included from ../../Client/include/micegamewindowlocal.h:7:
+../../Client/include/micegamewindow.h:29:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_btBack_clicked();
+  ^
+In file included from ../src/mainwindow.cpp:1:
+In file included from ../../Client/include/mainwindow.h:7:
+../../Client/include/othellogamewindow.h:28:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_homeButtonOthelloPlay_clicked();
+  ^
+In file included from ../src/mainwindow.cpp:1:
+In file included from ../../Client/include/mainwindow.h:8:
+../../Client/include/settings.h:31:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_backButtonSettings_clicked();
+  ^
+../../Client/include/settings.h:32:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_difficultyButton_clicked();
+  ^
+../../Client/include/settings.h:33:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_spinBox_valueChanged(const QString &arg1);
+  ^
+In file included from ../src/mainwindow.cpp:1:
+../../Client/include/mainwindow.h:33:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_logInButton_clicked();
+  ^
+../../Client/include/mainwindow.h:34:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_radioButtonMPMiceGame_clicked();
+  ^
+../../Client/include/mainwindow.h:35:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_radioButtonLocalMiceGame_clicked();
+  ^
+../../Client/include/mainwindow.h:36:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_instructionsButton_clicked();
+  ^
+../../Client/include/mainwindow.h:37:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_backButtonCG_clicked();
+  ^
+../../Client/include/mainwindow.h:38:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_othelloButtonCG_clicked();
+  ^
+../../Client/include/mainwindow.h:39:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_miceButtonCG_clicked();
+  ^
+../../Client/include/mainwindow.h:40:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_settingsButton_clicked();
+  ^
+../../Client/include/mainwindow.h:41:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_backButtonOG_clicked();
+  ^
+../../Client/include/mainwindow.h:42:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_playButtonOthello_clicked();
+  ^
+../../Client/include/mainwindow.h:43:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_backButtonMice_clicked();
+  ^
+../../Client/include/mainwindow.h:44:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_playButtonMice_clicked();
+  ^
+../../Client/include/mainwindow.h:45:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_backButtonInstructions_clicked();
+  ^
+../../Client/include/mainwindow.h:46:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_radioButtonLocalOthelloGame_clicked();
+  ^
+../../Client/include/mainwindow.h:47:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_radioButtonSingleOthelloGame_clicked();
+  ^
+22 warnings generated.
+In file included from ../src/micegamewindow.cpp:1:
+../src/../include/micegamewindow.h:29:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_btBack_clicked();
+  ^
+1 warning generated.
+In file included from ../src/micegamewindowlocal.cpp:1:
+In file included from ../../Client/include/micegamewindowlocal.h:7:
+../../Client/include/micegamewindow.h:29:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_btBack_clicked();
+  ^
+1 warning generated.
+In file included from ../src/micegamewindowserver.cpp:1:
+In file included from ../../Client/include/micegamewindowserver.h:8:
+../../Client/include/micegamewindow.h:29:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_btBack_clicked();
+  ^
+1 warning generated.
+In file included from ../src/othellogame.cpp:1:
+In file included from ../src/../include/othellogame.h:5:
+In file included from ../src/../include/../include/othellominmax.h:5:
+../src/../include/../include/othellostate.h:24:22: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+  int table[8][8] = {0};
+                     ^
+                     {}
+In file included from ../src/othelloboardscene.cpp:1:
+../src/../include/othelloboardscene.h:22:35: warning: implicit conversion from 'double' to 'int' changes value from 3.6 to 3 [-Wliteral-conversion]
+  const int detailedPositioning = 3.6;
+                                ~ ^~~
+1 warning generated.
+1 warning generated.
+In file included from ../src/othellominmax.cpp:1:
+In file included from ../src/../include/othellominmax.h:5:
+../src/../include/../include/othellostate.h:24:22: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+  int table[8][8] = {0};
+                     ^
+                     {}
+../src/othellominmax.cpp:45:3: warning: c++11 range-loop might detach Qt container (QVector) [-Wclazy-range-loop]
+  for (int nextMove : OthelloStateController::getNextValidMoves(os)) {
+  ^
+../src/othellominmax.cpp:71:3: warning: c++11 range-loop might detach Qt container (QVector) [-Wclazy-range-loop]
+  for (int nextMove : OthelloStateController::getNextValidMoves(os)) {
+  ^
+3 warnings generated.
+In file included from ../src/othellogamewindow.cpp:1:
+In file included from ../src/../include/othellogamewindow.h:4:
+../src/../include/othelloboardscene.h:22:35: warning: implicit conversion from 'double' to 'int' changes value from 3.6 to 3 [-Wliteral-conversion]
+  const int detailedPositioning = 3.6;
+                                ~ ^~~
+In file included from ../src/othellogamewindow.cpp:1:
+In file included from ../src/../include/othellogamewindow.h:5:
+In file included from ../src/../include/othellogame.h:5:
+In file included from ../src/../include/../include/othellominmax.h:5:
+../src/../include/../include/othellostate.h:24:22: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+  int table[8][8] = {0};
+                     ^
+                     {}
+In file included from ../src/othellogamewindow.cpp:1:
+../src/../include/othellogamewindow.h:28:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_homeButtonOthelloPlay_clicked();
+  ^
+3 warnings generated.
+In file included from ../src/othellostate.cpp:1:
+../src/../include/othellostate.h:24:22: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+  int table[8][8] = {0};
+                     ^
+                     {}
+In file included from ../src/othellostatecontroller.cpp:1:
+In file included from ../src/../include/othellostatecontroller.h:4:
+../src/../include/othellostate.h:24:22: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+  int table[8][8] = {0};
+                     ^
+                     {}
+1 warning generated.
+1 warning generated.
+In file included from ../src/settings.cpp:1:
+../../Client/include/settings.h:31:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_backButtonSettings_clicked();
+  ^
+../../Client/include/settings.h:32:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_difficultyButton_clicked();
+  ^
+../../Client/include/settings.h:33:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_spinBox_valueChanged(const QString &arg1);
+  ^
+3 warnings generated.
+In file included from moc_mainwindow.cpp:9:
+In file included from ./../include/mainwindow.h:7:
+In file included from ./../include/othellogamewindow.h:4:
+./../include/othelloboardscene.h:22:35: warning: implicit conversion from 'double' to 'int' changes value from 3.6 to 3 [-Wliteral-conversion]
+  const int detailedPositioning = 3.6;
+                                ~ ^~~
+In file included from moc_mainwindow.cpp:9:
+In file included from ./../include/mainwindow.h:7:
+In file included from ./../include/othellogamewindow.h:5:
+In file included from ./../include/othellogame.h:5:
+In file included from ./../include/../include/othellominmax.h:5:
+./../include/../include/othellostate.h:24:22: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+  int table[8][8] = {0};
+                     ^
+                     {}
+In file included from moc_micegamewindow.cpp:9:
+./../include/micegamewindow.h:29:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_btBack_clicked();
+  ^
+1 warning generated.
+In file included from moc_micegamewindowlocal.cpp:9:
+In file included from ./../include/micegamewindowlocal.h:7:
+./../include/micegamewindow.h:29:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_btBack_clicked();
+  ^
+1 warning generated.
+In file included from moc_mainwindow.cpp:9:
+In file included from ./../include/mainwindow.h:5:
+In file included from ./../include/micegamewindowlocal.h:7:
+./../include/micegamewindow.h:29:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_btBack_clicked();
+  ^
+In file included from moc_mainwindow.cpp:9:
+In file included from ./../include/mainwindow.h:7:
+./../include/othellogamewindow.h:28:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_homeButtonOthelloPlay_clicked();
+  ^
+In file included from moc_mainwindow.cpp:9:
+In file included from ./../include/mainwindow.h:8:
+./../include/settings.h:31:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_backButtonSettings_clicked();
+  ^
+./../include/settings.h:32:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_difficultyButton_clicked();
+  ^
+./../include/settings.h:33:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_spinBox_valueChanged(const QString &arg1);
+  ^
+In file included from moc_mainwindow.cpp:9:
+./../include/mainwindow.h:33:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_logInButton_clicked();
+  ^
+./../include/mainwindow.h:34:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_radioButtonMPMiceGame_clicked();
+  ^
+./../include/mainwindow.h:35:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_radioButtonLocalMiceGame_clicked();
+  ^
+./../include/mainwindow.h:36:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_instructionsButton_clicked();
+  ^
+./../include/mainwindow.h:37:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_backButtonCG_clicked();
+  ^
+./../include/mainwindow.h:38:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_othelloButtonCG_clicked();
+  ^
+./../include/mainwindow.h:39:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_miceButtonCG_clicked();
+  ^
+./../include/mainwindow.h:40:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_settingsButton_clicked();
+  ^
+./../include/mainwindow.h:41:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_backButtonOG_clicked();
+  ^
+./../include/mainwindow.h:42:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_playButtonOthello_clicked();
+  ^
+./../include/mainwindow.h:43:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_backButtonMice_clicked();
+  ^
+./../include/mainwindow.h:44:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_playButtonMice_clicked();
+  ^
+./../include/mainwindow.h:45:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_backButtonInstructions_clicked();
+  ^
+./../include/mainwindow.h:46:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_radioButtonLocalOthelloGame_clicked();
+  ^
+./../include/mainwindow.h:47:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_radioButtonSingleOthelloGame_clicked();
+  ^
+22 warnings generated.
+In file included from moc_othellogamewindow.cpp:9:
+In file included from ./../include/othellogamewindow.h:4:
+./../include/othelloboardscene.h:22:35: warning: implicit conversion from 'double' to 'int' changes value from 3.6 to 3 [-Wliteral-conversion]
+  const int detailedPositioning = 3.6;
+                                ~ ^~~
+In file included from moc_othellogamewindow.cpp:9:
+In file included from ./../include/othellogamewindow.h:5:
+In file included from ./../include/othellogame.h:5:
+In file included from ./../include/../include/othellominmax.h:5:
+./../include/../include/othellostate.h:24:22: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+  int table[8][8] = {0};
+                     ^
+                     {}
+In file included from moc_micegamewindowserver.cpp:9:
+In file included from ./../include/micegamewindowserver.h:8:
+./../include/micegamewindow.h:29:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_btBack_clicked();
+  ^
+1 warning generated.
+In file included from moc_othellogamewindow.cpp:9:
+./../include/othellogamewindow.h:28:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_homeButtonOthelloPlay_clicked();
+  ^
+3 warnings generated.
+In file included from moc_settings.cpp:9:
+./../include/settings.h:31:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_backButtonSettings_clicked();
+  ^
+./../include/settings.h:32:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_difficultyButton_clicked();
+  ^
+./../include/settings.h:33:3: warning: Slots named on_foo_bar are error prone [-Wclazy-connect-by-name]
+  void on_spinBox_valueChanged(const QString &arg1);
+  ^
+3 warnings generated.
