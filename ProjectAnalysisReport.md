@@ -2,6 +2,8 @@
 
 
 
+
+
 ## Sadržaj
 
 1. [Uvod](#1-uvod)
@@ -9,9 +11,9 @@
    - 2.1 [Cppcheck](#21-cppcheck)
    - 2.2 [Clazy](#22-clazy)
 3. [Analiza kompleksnosti — Lizard](#3-analiza-kompleksnosti--lizard)
-4. [Dinamička analiza — ASan i UBSan](#4-dinamička-analiza--asan-i-ubsan)
-5. [Debagovanje — GDB](#5-debagovanje--gdb)
-6. [Profilisanje performansi — Callgrind](#6-profilisanje-performansi--callgrind)
+4. [Profilisanje performansi — Perf](#4-profilisanje-performansi--perf)
+5. [Profilisanje performansi — Callgrind](#5-profilisanje-performansi--callgrind)
+6. [Analiza memorije — Heaptrack](#6-analiza-memorije--heaptrack)
 7. [Zaključak](#7-zaključak)
 
 ---
@@ -309,9 +311,106 @@ Rezultati pokazuju da u analiziranom projektu nema izrazito kompleksnih funkcija
 
 ---
 
-## 4. Dinamička analiza — Sanitizers
+## 4. Profilisanje performansi — Perf
 
-*Ovo poglavlje biće dopunjeno nakon analize.*
+Za profilisanje performansi aplikacije korišćen je alat **Perf**. Perf omogućava praćenje izvršavanja programa i prikupljanje uzoraka na osnovu kojih se može analizirati u kojim funkcijama program provodi procesorsko vreme.
+
+Za analizu je korišćena verzija **5.4.291**.
+
+Profilisanje je automatizovano skriptom `run_perf.sh`:
+
+```bash
+#!/bin/bash
+
+CLIENT="../11-SobaZabave/SobaZabave/src/build-Client-Desktop-Debug/Client"
+DATA_FILE="perf.data"
+REPORT_FILE="perf_report.txt"
+
+echo "Running Perf analysis..."
+
+sudo perf record -g -o "$DATA_FILE" "$CLIENT"
+
+echo "Generating Perf report..."
+
+sudo perf report \
+    -i "$DATA_FILE" \
+    --stdio \
+    --no-source \
+    > "$REPORT_FILE"
+
+echo "Perf analysis finished."
+echo "Report saved to: $REPORT_FILE"
+```
+
+Komanda `perf record` pokreće aplikaciju i prikuplja uzorke tokom njenog izvršavanja. Opcija `-g` omogućava prikupljanje podataka o lancima poziva funkcija. Nakon završetka aplikacije, komanda `perf report` obrađuje prikupljene podatke i rezultat čuva u fajlu `perf_report.txt`.
+
+![Pokretanje Perf analize](screenshots/perf1.png)
+
+*Slika 12: Pokretanje aplikacije pomoću alata Perf*
+
+### Scenario profilisanja
+
+Pošto je analizirani program interaktivna Qt aplikacija, bilo je potrebno koristiti aplikaciju tokom prikupljanja uzoraka. Kao konkretan scenario izabrana je igra **Mice**. Tokom profilisanja pokrenuta je lokalna igra i odigran je niz poteza, nakon čega je aplikacija zatvorena.
+
+![Mice igra tokom profilisanja](screenshots/perf2.png)
+
+*Slika 13: Korišćenje igre Mice tokom Perf profilisanja*
+
+Nakon zatvaranja aplikacije, Perf je završio prikupljanje podataka i generisan je izveštaj `perf_report.txt`. U ovom pokretanju prikupljeno je **15569 uzoraka**.
+
+![Završetak Perf profilisanja](screenshots/perf3.png)
+
+*Slika 14: Završetak Perf analize i generisanje izveštaja*
+
+### Analiza rezultata
+
+Kompletan rezultat profilisanja nalazi se u fajlu `perf_report.txt`. U njemu su prikazane funkcije samog programa, ali i funkcije Qt biblioteka, sistemskih biblioteka i drugih biblioteka koje aplikacija koristi.
+
+Na početku izveštaja navedeno je:
+
+```text
+Total Lost Samples: 0
+Samples: 15K of event 'cpu-clock:pppH'
+Event count (approx.): 3892250000
+```
+
+Vrednost `Total Lost Samples: 0` pokazuje da tokom ovog pokretanja nije došlo do gubitka prikupljenih uzoraka.
+
+Rezultati su prikazani kroz kolone `Children`, `Self`, `Command`, `Shared Object` i `Symbol`. Kolona `Self` predstavlja udeo uzoraka koji pripadaju direktnom izvršavanju određene funkcije, dok `Children` uključuje i izvršavanje funkcija koje se nalaze ispod nje u lancu poziva.
+
+Na vrhu kompletnog izveštaja nalaze se uglavnom funkcije iz biblioteka koje aplikacija koristi. Na primer, funkcija `png_set_read_user_transform_fn` iz biblioteke `libpng` ima vrednost `Self` od približno **29.70%**, dok funkcija `inflateBackEnd` iz biblioteke `libz` ima približno **26.67% Self**. Među funkcijama sa većim udelom nalazi se i `adler32_z`, takođe iz biblioteke `libz`, sa približno **15.80% Self**.
+
+Ovi rezultati pokazuju da je tokom analiziranog scenarija veliki deo prikupljenih uzoraka pripadao bibliotečkom kodu, pre svega obradi grafičkih resursa i podataka, a ne direktno funkcijama implementiranim u projektu.
+
+Radi lakšeg pregleda funkcija koje pripadaju samom projektu, iz kompletnog `perf_report.txt` izveštaja izdvojene su funkcije povezane sa igrama i korisničkim interfejsom. Izdvojeni rezultat sačuvan je u fajlu `perf_project_report.txt`. Originalni `perf_report.txt` nije menjan i sadrži kompletan rezultat profilisanja.
+
+![Funkcije projekta u Perf izveštaju](screenshots/perf4.png)
+
+*Slika 15: Funkcije projekta izdvojene iz rezultata Perf analize*
+
+Među izdvojenim funkcijama nalaze se:
+
+- `MiceGameWindowLocal::qt_metacast`
+- `MiceField::paint`
+- `MiceField::~MiceField`
+- `MainWindow::on_playButtonMice_clicked`
+- `MiceGameWindowLocal::MiceGameWindowLocal`
+- `MiceGameWindow::MiceGameWindow`
+- `MiceGame::MiceGame`
+- `MiceBoard::MiceBoard`
+- `MiceBoard::initializeGraph`
+- `BoardScene::qt_metacast`
+
+Njihovi pojedinačni udeli u ukupnom broju uzoraka su mali. Na primer, funkcija `MiceField::paint` ima vrednosti **0.02% Children** i **0.01% Self**, dok se ostale prikazane funkcije projekta kreću oko 0.01–0.03%.
+
+Ovakav rezultat je očekivan kod profilisanja kompletne GUI aplikacije, pošto Perf prati izvršavanje celog procesa, uključujući Qt, grafičke i sistemske biblioteke, a ne samo kod koji pripada analiziranom projektu.
+
+### Zaključak Perf analize
+
+Perf analizom nije uočeno izraženo CPU usko grlo u funkcijama samog projekta tokom posmatranog scenarija igre Mice. Najveći udeo uzoraka pripada funkcijama biblioteka koje aplikacija koristi, dok su funkcije projekta imale veoma male pojedinačne udele.
+
+Analiza je omogućila uvid u ponašanje aplikacije tokom stvarnog izvršavanja i pokazala koje se funkcije projekta aktiviraju tokom pokretanja i korišćenja igre Mice. Dobijeni rezultat predstavlja profil konkretnog analiziranog scenarija i ne mora predstavljati ponašanje aplikacije u svim mogućim načinima korišćenja.
+
 
 ---
 

@@ -1,0 +1,20 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 15K of event 'cpu-clock:pppH'
+# Event count (approx.): 3892250000
+#
+# Children      Self  Command          Shared Object               Symbol                                                                                                                                                                                                                                                                                    
+# ........  ........  ...............  ..........................  ..........................................................................................................................................................................................................................................................................................
+     0.03%     0.00%  Client           Client                      [.] MiceGameWindowLocal::qt_metacast
+     0.02%     0.01%  Client           Client                      [.] MiceField::paint
+     0.01%     0.00%  Client           Client                      [.] MiceField::~MiceField
+     0.01%     0.00%  Client           Client                      [.] MainWindow::on_playButtonMice_clicked
+     0.01%     0.00%  Client           Client                      [.] MiceGameWindowLocal::MiceGameWindowLocal
+     0.01%     0.00%  Client           Client                      [.] MiceGameWindow::MiceGameWindow
+     0.01%     0.00%  Client           Client                      [.] MiceGame::MiceGame
+     0.01%     0.00%  Client           Client                      [.] MiceBoard::MiceBoard
+     0.01%     0.00%  Client           Client                      [.] MiceBoard::initializeGraph
+     0.01%     0.00%  Client           Client                      [.] BoardScene::qt_metacast
