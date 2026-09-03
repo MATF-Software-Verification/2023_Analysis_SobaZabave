@@ -1,0 +1,45 @@
+--------------------------------------------------------------------------------
+Profile data file 'callgrind.out' (creator: callgrind-3.15.0)
+--------------------------------------------------------------------------------
+I1 cache: 
+D1 cache: 
+LL cache: 
+Timerange: Basic block 0 - 3018404
+Trigger: Program termination
+Profiled target:  ../11-SobaZabave/test/Test/build/Test (PID 12840, part 1)
+Events recorded:  Ir
+Events shown:     Ir
+Event sort order: Ir
+Thresholds:       99
+Include dirs:     
+User annotated:   
+Auto-annotation:  on
+
+--------------------------------------------------------------------------------
+Ir         
+--------------------------------------------------------------------------------
+15,811,256  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+Ir         file:function
+  213,386  ???:OthelloStateController::isPossibleMove(Othellostate const&, int, int) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   55,926  ???:Othellostate::getTableField(int, int) const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   47,120  ???:MiceBoard::initializePositions() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   17,562  ???:OthelloStateController::getNextValidMoves(Othellostate const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   17,267  ???:OthelloStateController::playMove(Othellostate&, int) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   15,375  ???:OthelloMinMax::HeuristicScore(Othellostate const&) const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   11,149  ???:MiceBoard::getValidMovementsPhase1(int) const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   10,380  ???:Othellostate::Othellostate(Othellostate const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    7,000  ???:MiceBoard::initializeGraph() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    5,760  ???:OthelloMinMax::getHeuristicScoreOnField(int, int) const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    3,429  ???:Othellostate::getOnMove() const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    3,150  ???:OthelloGame::calculatePlayerFields() const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    3,009  ???:Othellostate::Othellostate() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,917  ???:OthelloGame::getWinner() const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,482  ???:Othellostate::putOnTable(int) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,278  ???:OthelloMinMax::OthelloMinMax(GameSettings&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,164  ???:MiceBoard::checkIsValidMovePhase1(QPair<int, int> const&, int) const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,134  ???:Othellostate::getRowAndCollumnFromMove(int) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,127  ???:Othellostate::isEnd() const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,120  ???:MiceBoard::MiceBoard() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+      810  ???:MiceBoard::checkIsValidMovePhase0and2(int) const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]

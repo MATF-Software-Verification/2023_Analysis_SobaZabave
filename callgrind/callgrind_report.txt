@@ -1,0 +1,400 @@
+--------------------------------------------------------------------------------
+Profile data file 'callgrind.out' (creator: callgrind-3.15.0)
+--------------------------------------------------------------------------------
+I1 cache: 
+D1 cache: 
+LL cache: 
+Timerange: Basic block 0 - 3018404
+Trigger: Program termination
+Profiled target:  ../11-SobaZabave/test/Test/build/Test (PID 12840, part 1)
+Events recorded:  Ir
+Events shown:     Ir
+Event sort order: Ir
+Thresholds:       99
+Include dirs:     
+User annotated:   
+Auto-annotation:  on
+
+--------------------------------------------------------------------------------
+Ir         
+--------------------------------------------------------------------------------
+15,811,256  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+Ir         file:function
+--------------------------------------------------------------------------------
+3,614,196  /build/glibc-B3wQXB/glibc-2.31/elf/dl-lookup.c:do_lookup_x [/lib/x86_64-linux-gnu/ld-2.31.so]
+2,628,460  /build/glibc-B3wQXB/glibc-2.31/elf/dl-lookup.c:_dl_lookup_symbol_x [/lib/x86_64-linux-gnu/ld-2.31.so]
+1,568,840  /build/glibc-B3wQXB/glibc-2.31/elf/../sysdeps/x86_64/dl-machine.h:_dl_relocate_object
+  732,511  /build/glibc-B3wQXB/glibc-2.31/malloc/malloc.c:_int_free [/lib/x86_64-linux-gnu/libc-2.31.so]
+  640,502  /build/glibc-B3wQXB/glibc-2.31/elf/do-rel.h:_dl_relocate_object
+  566,482  /build/glibc-B3wQXB/glibc-2.31/string/../sysdeps/x86_64/strcmp.S:strcmp [/lib/x86_64-linux-gnu/ld-2.31.so]
+  528,454  /build/glibc-B3wQXB/glibc-2.31/malloc/malloc.c:_int_malloc [/lib/x86_64-linux-gnu/libc-2.31.so]
+  500,196  /build/glibc-B3wQXB/glibc-2.31/malloc/malloc.c:malloc [/lib/x86_64-linux-gnu/libc-2.31.so]
+  432,271  ???:void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) [clone .constprop.0] [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+  379,964  /build/glibc-B3wQXB/glibc-2.31/elf/dl-lookup.c:check_match [/lib/x86_64-linux-gnu/ld-2.31.so]
+  229,213  /build/glibc-B3wQXB/glibc-2.31/malloc/malloc.c:free [/lib/x86_64-linux-gnu/libc-2.31.so]
+  213,386  ???:OthelloStateController::isPossibleMove(Othellostate const&, int, int) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+  183,225  /build/glibc-B3wQXB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:__memcpy_avx_unaligned_erms [/lib/x86_64-linux-gnu/libc-2.31.so]
+  138,690  ???:Catch::TestCaseTracking::TrackerBase::findChild(Catch::TestCaseTracking::NameAndLocation const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+  131,091  ???:Catch::FatalConditionHandler::FatalConditionHandler() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+  110,979  ???:operator new(unsigned long) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+   89,924  ???:Catch::clara::detail::Parser::Parser(Catch::clara::detail::Parser const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   87,340  /build/glibc-B3wQXB/glibc-2.31/malloc/malloc.c:malloc_consolidate [/lib/x86_64-linux-gnu/libc-2.31.so]
+   80,512  ???:std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+   79,014  ???:Catch::TestCaseTracking::SectionTracker::acquire(Catch::TestCaseTracking::TrackerContext&, Catch::TestCaseTracking::NameAndLocation const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   75,626  ???:Catch::clara::detail::Opt::~Opt() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   74,190  /build/glibc-B3wQXB/glibc-2.31/nptl/../sysdeps/unix/sysv/linux/sigaction.c:__libc_sigaction [/lib/x86_64-linux-gnu/libpthread-2.31.so]
+   71,775  ???:0x0000000000115ba0 [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+   71,545  /build/glibc-B3wQXB/glibc-2.31/elf/dl-addr.c:_dl_addr [/lib/x86_64-linux-gnu/libc-2.31.so]
+   62,627  ???:void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   62,229  ???:Catch::SourceLineInfo::operator==(Catch::SourceLineInfo const&) const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   60,897  ???:Catch::Section::Section(Catch::SectionInfo const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   60,414  /build/glibc-B3wQXB/glibc-2.31/elf/dl-misc.c:_dl_name_match_p [/lib/x86_64-linux-gnu/ld-2.31.so]
+   59,816  ???:QArrayData::allocate(unsigned long, unsigned long, unsigned long, QFlags<QArrayData::AllocationOption>) [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+   57,800  /build/glibc-B3wQXB/glibc-2.31/elf/dl-version.c:_dl_check_map_versions [/lib/x86_64-linux-gnu/ld-2.31.so]
+   56,453  /build/glibc-B3wQXB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memcmp-avx2-movbe.S:__memcmp_avx2_movbe [/lib/x86_64-linux-gnu/libc-2.31.so]
+   55,926  ???:Othellostate::getTableField(int, int) const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   54,309  /build/glibc-B3wQXB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strlen-avx2.S:__strlen_avx2 [/lib/x86_64-linux-gnu/libc-2.31.so]
+   51,569  ???:Catch::RunContext::sectionStarted(Catch::SectionInfo const&, Catch::Counts&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   49,611  ???:Catch::Section::~Section() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   47,169  /build/glibc-B3wQXB/glibc-2.31/elf/dl-sort-maps.c:_dl_sort_maps [/lib/x86_64-linux-gnu/ld-2.31.so]
+   47,120  ???:MiceBoard::initializePositions() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   46,164  /build/glibc-B3wQXB/glibc-2.31/elf/../sysdeps/generic/ldsodefs.h:_dl_relocate_object
+   41,760  ???:possibleShifts() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   41,024  ???:std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   40,861  /build/glibc-B3wQXB/glibc-2.31/malloc/malloc.c:unlink_chunk.isra.0 [/lib/x86_64-linux-gnu/libc-2.31.so]
+   40,558  /build/glibc-B3wQXB/glibc-2.31/elf/dl-load.c:_dl_map_object [/lib/x86_64-linux-gnu/ld-2.31.so]
+   40,110  ???:QVector<QPair<int, int> >::append(QPair<int, int>&&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   37,476  ???:Catch::getResultCapture() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   30,954  /build/glibc-B3wQXB/glibc-2.31/time/../sysdeps/unix/sysv/linux/clock_gettime.c:clock_gettime@@GLIBC_2.17 [/lib/x86_64-linux-gnu/libc-2.31.so]
+   29,827  ???:void std::vector<Catch::clara::detail::Opt, std::allocator<Catch::clara::detail::Opt> >::_M_realloc_insert<Catch::clara::detail::Opt const&>(__gnu_cxx::__normal_iterator<Catch::clara::detail::Opt*, std::vector<Catch::clara::detail::Opt, std::allocator<Catch::clara::detail::Opt> > >, Catch::clara::detail::Opt const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   28,681  ???:Catch::SectionInfo::SectionInfo(Catch::SourceLineInfo const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   27,300  ???:Catch::TestCaseTracking::SectionTracker::isComplete() const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   26,706  /build/glibc-B3wQXB/glibc-2.31/elf/dl-cache.c:_dl_cache_libcmp [/lib/x86_64-linux-gnu/ld-2.31.so]
+   24,054  ???:Catch::TestCaseTracking::NameAndLocation::NameAndLocation(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Catch::SourceLineInfo const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   22,496  ???:std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [clone .constprop.0] [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   21,975  ???:std::chrono::_V2::system_clock::now() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+   21,968  ???:qCalculateBlockSize(unsigned long, unsigned long, unsigned long) [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+   21,148  /build/glibc-B3wQXB/glibc-2.31/elf/dl-load.c:_dl_map_object_from_fd [/lib/x86_64-linux-gnu/ld-2.31.so]
+   20,328  /build/glibc-B3wQXB/glibc-2.31/elf/../sysdeps/generic/ldsodefs.h:do_lookup_x
+   20,303  /build/glibc-B3wQXB/glibc-2.31/elf/../elf/dl-runtime.c:_dl_fixup [/lib/x86_64-linux-gnu/ld-2.31.so]
+   20,222  ???:0x000000000011b1a0 [???]
+   20,185  ???:0x00000000056afef0 [???]
+   20,168  ???:____C_A_T_C_H____T_E_S_T____0() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   19,847  /build/glibc-B3wQXB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strcmp-avx2.S:__strcmp_avx2 [/lib/x86_64-linux-gnu/libc-2.31.so]
+   19,095  ???:0x00000000056b0960 [???]
+   19,090  ???:operator delete(void*) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+   18,750  ???:0x000000000011ae40 [???]
+   18,315  /build/glibc-B3wQXB/glibc-2.31/elf/dl-tunables.c:__GI___tunables_init [/lib/x86_64-linux-gnu/ld-2.31.so]
+   17,562  ???:OthelloStateController::getNextValidMoves(Othellostate const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   17,267  ???:OthelloStateController::playMove(Othellostate&, int) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   15,375  ???:OthelloMinMax::HeuristicScore(Othellostate const&) const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   14,222  ???:Catch::SectionInfo::~SectionInfo() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   13,670  ???:Catch::TestCaseTracking::TrackerBase::close() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   13,603  /build/glibc-B3wQXB/glibc-2.31/elf/dl-deps.c:_dl_map_object_deps [/lib/x86_64-linux-gnu/ld-2.31.so]
+   13,465  ???:0x00000000056af9d0 [???]
+   13,350  ???:0x000000000011af40 [???]
+   13,134  ???:____C_A_T_C_H____T_E_S_T____119() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   12,627  ???:QLocalePrivate::codeToCountry(QStringView) [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+   12,604  ???:QVector<QPair<int, int> >::reallocData(int, int, QFlags<QArrayData::AllocationOption>) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   12,600  ???:Catch::TestCaseTracking::TrackerBase::isComplete() const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   12,587  /build/glibc-B3wQXB/glibc-2.31/stdlib/getenv.c:getenv [/lib/x86_64-linux-gnu/libc-2.31.so]
+   12,288  ???:____C_A_T_C_H____T_E_S_T____50() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   12,160  ???:std::_Hashtable<int, int, std::allocator<int>, std::__detail::_Identity, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, true, true> >::_M_rehash(unsigned long, unsigned long const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   12,160  ???:std::locale::_Impl::_M_install_facet(std::locale::id const*, std::locale::facet const*) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+   11,641  /build/glibc-B3wQXB/glibc-2.31/stdlib/cxa_finalize.c:__cxa_finalize [/lib/x86_64-linux-gnu/libc-2.31.so]
+   11,515  ???:Catch::RunContext::runCurrentTest(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   11,496  ???:std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+   11,149  ???:MiceBoard::getValidMovementsPhase1(int) const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   10,539  /build/glibc-B3wQXB/glibc-2.31/elf/get-dynamic-info.h:_dl_map_object_from_fd
+   10,415  ???:Catch::ConsoleReporter::sectionEnded(Catch::SectionStats const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   10,380  ???:Othellostate::Othellostate(Othellostate const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   10,192  ???:Catch::FatalConditionHandler::engage_platform() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+   10,080  ???:std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::compare(char const*) const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    9,992  ???:Catch::ConsoleReporter::sectionStarting(Catch::SectionInfo const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    9,813  ???:Catch::clara::detail::Parser::~Parser() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    9,810  ???:Catch::SectionStats::SectionStats(Catch::SectionInfo const&, Catch::Counts const&, double, bool) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    9,458  ???:Catch::TestCaseTracking::TrackerBase::isOpen() const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    9,026  ???:0x000000000001cad0 [/usr/lib/x86_64-linux-gnu/libGLX.so.0.0.0]
+    8,960  /build/glibc-B3wQXB/glibc-2.31/wcsmbs/btowc.c:btowc [/lib/x86_64-linux-gnu/libc-2.31.so]
+    8,833  /build/glibc-B3wQXB/glibc-2.31/elf/dl-load.c:open_verify.constprop.0 [/lib/x86_64-linux-gnu/ld-2.31.so]
+    8,782  /build/glibc-B3wQXB/glibc-2.31/elf/dl-cache.c:_dl_load_cache_lookup [/lib/x86_64-linux-gnu/ld-2.31.so]
+    8,729  ???:Catch::Timer::start() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    8,381  ???:qCalculateGrowingBlockSize(unsigned long, unsigned long, unsigned long) [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+    8,232  /build/glibc-B3wQXB/glibc-2.31/nptl/../nptl/sigaction.c:sigaction [/lib/x86_64-linux-gnu/libpthread-2.31.so]
+    7,864  ???:QArrayData::deallocate(QArrayData*, unsigned long, unsigned long) [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+    7,635  ???:void std::vector<std::shared_ptr<Catch::TestCaseTracking::ITracker>, std::allocator<std::shared_ptr<Catch::TestCaseTracking::ITracker> > >::_M_realloc_insert<std::shared_ptr<Catch::TestCaseTracking::ITracker> const&>(__gnu_cxx::__normal_iterator<std::shared_ptr<Catch::TestCaseTracking::ITracker>*, std::vector<std::shared_ptr<Catch::TestCaseTracking::ITracker>, std::allocator<std::shared_ptr<Catch::TestCaseTracking::ITracker> > > >, std::shared_ptr<Catch::TestCaseTracking::ITracker> const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    7,604  ???:std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    7,560  ???:Catch::RunContext::sectionEnded(Catch::SectionEndInfo const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    7,412  ???:Catch::shouldShowDuration(Catch::IConfig const&, double) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    7,325  ???:Catch::getCurrentNanosecondsSinceEpoch() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    7,278  ???:Catch::TestCaseTracking::SectionTracker::~SectionTracker()'2 [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    7,052  /build/glibc-B3wQXB/glibc-2.31/elf/../sysdeps/x86_64/dl-trampoline.h:_dl_runtime_resolve_xsave [/lib/x86_64-linux-gnu/ld-2.31.so]
+    7,000  ???:MiceBoard::initializeGraph() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    6,979  /build/glibc-B3wQXB/glibc-2.31/elf/dl-open.c:_dl_find_dso_for_object [/lib/x86_64-linux-gnu/ld-2.31.so]
+    6,869  ???:Catch::TestCaseTracking::SectionTracker::tryOpen() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    6,625  /build/glibc-B3wQXB/glibc-2.31/elf/dl-object.c:_dl_new_object [/lib/x86_64-linux-gnu/ld-2.31.so]
+    6,538  ???:0x000000000011b1d0 [???]
+    6,521  /build/glibc-B3wQXB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memset-vec-unaligned-erms.S:memset [/lib/x86_64-linux-gnu/ld-2.31.so]
+    6,339  ???:void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    6,205  ???:Catch::makeTestCase(Catch::ITestInvoker*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Catch::NameAndTags const&, Catch::SourceLineInfo const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    6,160  ???:QVector<int>::QVector(int, int const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    6,126  ???:void std::_Hashtable<int, int, std::allocator<int>, std::__detail::_Identity, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, true, true> >::_M_assign<std::_Hashtable<int, int, std::allocator<int>, std::__detail::_Identity, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, true, true> >::_M_assign(std::_Hashtable<int, int, std::allocator<int>, std::__detail::_Identity, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, true, true> > const&)::{lambda(std::__detail::_Hash_node<int, false> const*) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    5,978  ???:Catch::restorePreviousSignalHandlers() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    5,938  /build/glibc-B3wQXB/glibc-2.31/elf/dl-tunables.h:__GI___tunables_init
+    5,860  ???:Catch::NonCopyable::NonCopyable() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    5,830  /build/glibc-B3wQXB/glibc-2.31/elf/dl-load.c:open_path [/lib/x86_64-linux-gnu/ld-2.31.so]
+    5,760  ???:OthelloMinMax::getHeuristicScoreOnField(int, int) const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    5,560  ???:std::__detail::_Prime_rehash_policy::_M_next_bkt(unsigned long) const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    5,512  ???:Catch::RunContext::runTest(Catch::TestCase const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    5,499  ???:Catch::trim(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    5,400  /build/glibc-B3wQXB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memchr-avx2.S:__memchr_avx2 [/lib/x86_64-linux-gnu/libc-2.31.so]
+    5,366  ???:Catch::TestCaseTracking::SectionTracker::SectionTracker(Catch::TestCaseTracking::NameAndLocation const&, Catch::TestCaseTracking::TrackerContext&, Catch::TestCaseTracking::ITracker*) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    5,277  /build/glibc-B3wQXB/glibc-2.31/elf/dl-error-skeleton.c:_dl_catch_exception [/lib/x86_64-linux-gnu/libc-2.31.so]
+    5,217  ???:Catch::TestCaseTracking::TrackerBase::TrackerBase(Catch::TestCaseTracking::NameAndLocation const&, Catch::TestCaseTracking::TrackerContext&, Catch::TestCaseTracking::ITracker*) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    4,988  ???:Catch::TestCaseTracking::TrackerContext::completedCycle() const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    4,890  /build/glibc-B3wQXB/glibc-2.31/string/../sysdeps/x86_64/multiarch/../strlen.S:strlen [/lib/x86_64-linux-gnu/ld-2.31.so]
+    4,572  ???:std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::find_last_not_of(char const*, unsigned long, unsigned long) const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    4,457  ???:QVector<int>::reallocData(int, int, QFlags<QArrayData::AllocationOption>) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    4,405  /build/glibc-B3wQXB/glibc-2.31/elf/dl-minimal.c:malloc [/lib/x86_64-linux-gnu/ld-2.31.so]
+    4,395  ???:Catch::TestCaseTracking::TrackerContext::currentTracker() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    4,377  ???:std::_Hashtable<int, int, std::allocator<int>, std::__detail::_Identity, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, true, true> >::_M_erase(std::integral_constant<bool, true>, int const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    4,368  ???:std::_Hashtable<int, int, std::allocator<int>, std::__detail::_Identity, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, true, true> >::clear() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    4,335  /build/glibc-B3wQXB/glibc-2.31/elf/./dl-map-segments.h:_dl_map_object_from_fd
+    4,271  /build/glibc-B3wQXB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memset-vec-unaligned-erms.S:__memset_avx2_unaligned_erms [/lib/x86_64-linux-gnu/libc-2.31.so]
+    4,194  /build/glibc-B3wQXB/glibc-2.31/string/../sysdeps/x86_64/multiarch/../strchr.S:index [/lib/x86_64-linux-gnu/ld-2.31.so]
+    4,167  /build/glibc-B3wQXB/glibc-2.31/elf/dl-reloc.c:_dl_relocate_object [/lib/x86_64-linux-gnu/ld-2.31.so]
+    3,948  ???:std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::find_first_not_of(char const*, unsigned long, unsigned long) const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    3,881  /build/glibc-B3wQXB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:memcpy [/lib/x86_64-linux-gnu/ld-2.31.so]
+    3,798  ???:Catch::ListeningReporter::isMulti() const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    3,724  ???:Catch::StringRef::StringRef(char const*) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    3,719  ???:0x000000000013f1c0 [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+    3,671  /build/glibc-B3wQXB/glibc-2.31/elf/../sysdeps/x86/dl-prop.h:_dl_process_pt_note [/lib/x86_64-linux-gnu/ld-2.31.so]
+    3,488  ???:Catch::RunContext::testForMissingAssertions(Catch::Counts&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    3,488  ???:Catch::SectionStats::~SectionStats() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    3,488  ???:void std::vector<Catch::TestCase, std::allocator<Catch::TestCase> >::_M_realloc_insert<Catch::TestCase const&>(__gnu_cxx::__normal_iterator<Catch::TestCase*, std::vector<Catch::TestCase, std::allocator<Catch::TestCase> > >, Catch::TestCase const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    3,485  /build/glibc-B3wQXB/glibc-2.31/elf/../sysdeps/x86_64/dl-trampoline.h:_dl_runtime_resolve_xsave'2 [/lib/x86_64-linux-gnu/ld-2.31.so]
+    3,447  ???:Catch::Section::operator bool() const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    3,432  ???:__dynamic_cast [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    3,429  ???:Othellostate::getOnMove() const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    3,394  ???:Catch::enforceNoDuplicateTestCases(std::vector<Catch::TestCase, std::allocator<Catch::TestCase> > const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    3,386  /build/glibc-B3wQXB/glibc-2.31/setjmp/../sysdeps/x86_64/setjmp.S:__sigsetjmp [/lib/x86_64-linux-gnu/libc-2.31.so]
+    3,330  ???:0x0000000000116210 [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+    3,219  ???:Catch::RunContext::handleExpr(Catch::AssertionInfo const&, Catch::ITransientExpression const&, Catch::AssertionReaction&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    3,150  ???:OthelloGame::calculatePlayerFields() const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    3,072  ???:Catch::Counts::operator-(Catch::Counts const&) const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    3,067  /build/glibc-B3wQXB/glibc-2.31/elf/dl-object.c:_dl_add_to_namespace_list [/lib/x86_64-linux-gnu/ld-2.31.so]
+    3,038  /build/glibc-B3wQXB/glibc-2.31/stdlib/cxa_atexit.c:__new_exitfn [/lib/x86_64-linux-gnu/libc-2.31.so]
+    3,009  ???:Othellostate::Othellostate() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    2,935  ???:0x00000000056af950 [???]
+    2,930  ???:0x000000000011b510 [???]
+    2,918  ???:0x000000000011ad90 [???]
+    2,820  ???:Catch::(anonymous namespace)::parseSpecialTag(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    2,816  /build/glibc-B3wQXB/glibc-2.31/wcsmbs/wctob.c:wctob [/lib/x86_64-linux-gnu/libc-2.31.so]
+    2,772  /build/glibc-B3wQXB/glibc-2.31/stdlib/cxa_atexit.c:__cxa_atexit [/lib/x86_64-linux-gnu/libc-2.31.so]
+    2,745  ???:Catch::TestCaseInfo::~TestCaseInfo() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    2,733  ???:std::ctype<wchar_t>::_M_initialize_ctype() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    2,728  /build/glibc-B3wQXB/glibc-2.31/misc/../sysdeps/unix/sysv/linux/mmap64.c:mmap [/lib/x86_64-linux-gnu/ld-2.31.so]
+    2,664  ???:QVector<QVector<int> >::reallocData(int, int, QFlags<QArrayData::AllocationOption>) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    2,635  /build/glibc-B3wQXB/glibc-2.31/libio/fileops.c:_IO_file_xsputn@@GLIBC_2.2.5 [/lib/x86_64-linux-gnu/libc-2.31.so]
+    2,616  ???:Catch::TestCaseTracking::TrackerBase::open() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    2,601  ???:QString::indexOf(QChar, int, Qt::CaseSensitivity) const [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+    2,600  ???:non-virtual thunk to Catch::Singleton<Catch::(anonymous namespace)::RegistryHub, Catch::IRegistryHub, Catch::IMutableRegistryHub>::~Singleton() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    2,505  ???:Catch::makeCommandLineParser(Catch::ConfigData&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    2,474  ???:0x000000000011adc0 [???]
+    2,463  /build/glibc-B3wQXB/glibc-2.31/stdlib/exit.c:__run_exit_handlers [/lib/x86_64-linux-gnu/libc-2.31.so]
+    2,462  ???:0x000000000011b0c0 [???]
+    2,435  ???:Catch::StreamingReporterBase<Catch::ConsoleReporter>::testCaseStarting(Catch::TestCaseInfo const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    2,398  ???:0x000000000011adf0 [???]
+    2,380  /build/glibc-B3wQXB/glibc-2.31/elf/dl-sym.c:_dl_sym [/lib/x86_64-linux-gnu/libc-2.31.so]
+    2,352  ???:0x000000000011af50 [???]
+    2,344  ???:Catch::NonCopyable::~NonCopyable() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    2,334  /build/glibc-B3wQXB/glibc-2.31/elf/../sysdeps/posix/dl-fileid.h:_dl_map_object_from_fd
+    2,220  ???:Catch::RunContext::assertionPassed() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    2,180  ???:Catch::Timer::getElapsedMicroseconds() const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    2,180  ???:Catch::Timer::getElapsedSeconds() const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    2,169  ???:QLocalePrivate::codeToLanguage(QStringView) [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+    2,167  /build/glibc-B3wQXB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:mempcpy [/lib/x86_64-linux-gnu/ld-2.31.so]
+    2,156  ???:Catch::RunContext::invokeActiveTestCase() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    2,140  ???:std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    2,028  ???:Catch::setTags(Catch::TestCaseInfo&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    2,023  ???:Catch::AssertionHandler::AssertionHandler(Catch::StringRef const&, Catch::SourceLineInfo const&, Catch::StringRef, Catch::ResultDisposition::Flags) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,976  /build/glibc-B3wQXB/glibc-2.31/elf/dl-init.c:call_init.part.0 [/lib/x86_64-linux-gnu/ld-2.31.so]
+    1,974  ???:Catch::TestCase::operator<(Catch::TestCase const&) const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,944  /build/glibc-B3wQXB/glibc-2.31/elf/dl-deps.c:openaux [/lib/x86_64-linux-gnu/ld-2.31.so]
+    1,944  /build/glibc-B3wQXB/glibc-2.31/elf/dl-load.c:_dl_dst_count [/lib/x86_64-linux-gnu/ld-2.31.so]
+    1,936  /build/glibc-B3wQXB/glibc-2.31/ctype/ctype.c:tolower [/lib/x86_64-linux-gnu/libc-2.31.so]
+    1,935  /build/glibc-B3wQXB/glibc-2.31/elf/rtld.c:dl_main [/lib/x86_64-linux-gnu/ld-2.31.so]
+    1,924  ???:0x000000000011b6c0 [???]
+    1,924  ???:__cxxabiv1::__si_class_type_info::__do_dyncast(long, __cxxabiv1::__class_type_info::__sub_kind, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__dyncast_result&) const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    1,923  /build/glibc-B3wQXB/glibc-2.31/elf/dl-fini.c:_dl_fini [/lib/x86_64-linux-gnu/ld-2.31.so]
+    1,917  ???:OthelloGame::getWinner() const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,907  ???:QVector<QVector<int> >::append(QVector<int> const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,893  /build/glibc-B3wQXB/glibc-2.31/nptl/../nptl/pthread_mutex_lock.c:pthread_mutex_lock [/lib/x86_64-linux-gnu/libpthread-2.31.so]
+    1,878  ???:std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    1,862  ???:Catch::TestCaseInfo::TestCaseInfo(Catch::TestCaseInfo const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,848  /build/glibc-B3wQXB/glibc-2.31/elf/../sysdeps/x86_64/tls_get_addr.S:__tls_get_addr [/lib/x86_64-linux-gnu/ld-2.31.so]
+    1,838  ???:QtPrivate::qustrchr(QStringView, unsigned short) [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+    1,816  ???:0x00000000002e18e0 [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+    1,811  ???:0x00000000085c45c0 [???]
+    1,785  ???:Catch::RunContext::aborting() const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,736  ???:std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    1,698  ???:0x000000000029c220 [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+    1,684  /build/glibc-B3wQXB/glibc-2.31/libio/iofwrite.c:fwrite [/lib/x86_64-linux-gnu/libc-2.31.so]
+    1,683  ???:Catch::seedRng(Catch::IConfig const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,636  ???:Catch::sortTests(Catch::IConfig const&, std::vector<Catch::TestCase, std::allocator<Catch::TestCase> > const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,615  ???:Catch::TestCase::TestCase(Catch::ITestInvoker*, Catch::TestCaseInfo&&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,608  ???:0x00000000002e2220 [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+    1,568  ???:Catch::RunContext::handleUnfinishedSections() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,556  /build/glibc-B3wQXB/glibc-2.31/nptl/pthread_mutex_unlock.c:pthread_mutex_unlock [/lib/x86_64-linux-gnu/libpthread-2.31.so]
+    1,548  ???:Catch::TestCaseTracking::TrackerBase::openChild() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,526  ???:Catch::Timer::getElapsedNanoseconds() const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,522  ???:0x00000000000b7b10 [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+    1,494  ???:QObject::~QObject() [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+    1,482  ???:Othellostate::putOnTable(int) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,480  ???:QVector<int>::QVector(QVector<int> const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,459  ???:____C_A_T_C_H____T_E_S_T____72() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,452  ???:QString::operator=(QString const&) [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+    1,440  /build/glibc-B3wQXB/glibc-2.31/dlfcn/dlerror.c:_dlerror_run [/lib/x86_64-linux-gnu/libdl-2.31.so]
+    1,431  ???:0x000000000001cb50 [/usr/lib/x86_64-linux-gnu/libGLX.so.0.0.0]
+    1,422  /build/glibc-B3wQXB/glibc-2.31/io/../sysdeps/unix/sysv/linux/open64_nocancel.c:__open_nocancel [/lib/x86_64-linux-gnu/ld-2.31.so]
+    1,401  ???:____C_A_T_C_H____T_E_S_T____35() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,392  ???:Catch::clara::detail::Parser::parse(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Catch::clara::detail::TokenStream const&) const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,386  ???:Catch::TestCaseTracking::ITracker::~ITracker() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,374  ???:QString::append(QChar) [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+    1,350  /build/glibc-B3wQXB/glibc-2.31/string/strdup.c:strdup [/lib/x86_64-linux-gnu/libc-2.31.so]
+    1,349  ???:Catch::TestCaseInfo::TestCaseInfo(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, Catch::SourceLineInfo const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,336  ???:Catch::toLowerInPlace(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,315  ???:QVector<QVector<int> >::freeData(QTypedArrayData<QVector<int> >*) [clone .isra.0] [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,308  ???:Catch::TestCaseTracking::TrackerBase::moveToParent() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,308  ???:Catch::TestCaseTracking::TrackerContext::setCurrentTracker(Catch::TestCaseTracking::ITracker*) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,278  ???:OthelloMinMax::OthelloMinMax(GameSettings&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,268  ???:Catch::TestCaseStats::~TestCaseStats() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,253  ???:Catch::TestCaseTracking::TrackerContext::startRun() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,249  ???:0x00000000001597f0 [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+    1,248  ???:std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<int, false> > >::_M_allocate_buckets(unsigned long) [clone .isra.0] [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,235  ???:Catch::TestCaseTracking::SectionTracker::~SectionTracker() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,212  ???:std::locale::id::_M_id() const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    1,197  ???:Catch::AutoReg::AutoReg(Catch::ITestInvoker*, Catch::SourceLineInfo const&, Catch::StringRef const&, Catch::NameAndTags const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,190  ???:Catch::AssertionHandler::complete() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,176  /build/glibc-B3wQXB/glibc-2.31/nptl/../sysdeps/unix/sysv/linux/internal-signals.h:sigaction
+    1,176  /build/glibc-B3wQXB/glibc-2.31/signal/../sysdeps/unix/syscall-template.S:sigaltstack [/lib/x86_64-linux-gnu/libc-2.31.so]
+    1,170  ???:Catch::clara::detail::Parser Catch::clara::detail::Parser::operator|<Catch::clara::detail::Opt>(Catch::clara::detail::Opt const&) const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,164  ???:MiceBoard::checkIsValidMovePhase1(QPair<int, int> const&, int) const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,160  /build/glibc-B3wQXB/glibc-2.31/malloc/malloc.c:realloc [/lib/x86_64-linux-gnu/libc-2.31.so]
+    1,156  /build/glibc-B3wQXB/glibc-2.31/dlfcn/dlsym.c:dlsym [/lib/x86_64-linux-gnu/libdl-2.31.so]
+    1,134  ???:Othellostate::getRowAndCollumnFromMove(int) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,132  ???:std::_Rb_tree<Catch::TestCase, Catch::TestCase, std::_Identity<Catch::TestCase>, std::less<Catch::TestCase>, std::allocator<Catch::TestCase> >::_M_erase(std::_Rb_tree_node<Catch::TestCase>*)'2 [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,127  ???:Othellostate::isEnd() const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,122  ???:0x0000000000125cc0 [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+    1,121  /build/glibc-B3wQXB/glibc-2.31/elf/./dl-load.h:_dl_map_object_from_fd
+    1,120  ???:Catch::Counts::total() const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,120  ???:MiceBoard::MiceBoard() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,087  ???:std::ctype<char>::_M_widen_init() const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    1,085  /build/glibc-B3wQXB/glibc-2.31/elf/dl-tunables.c:__tunable_get_val [/lib/x86_64-linux-gnu/ld-2.31.so]
+    1,057  ???:____C_A_T_C_H____T_E_S_T____113() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,036  /build/glibc-B3wQXB/glibc-2.31/wctype/wctype_l.c:wctype_l [/lib/x86_64-linux-gnu/libc-2.31.so]
+    1,032  ???:QFileInfo::~QFileInfo() [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+    1,011  ???:std::_Rb_tree<Catch::TestCase const*, Catch::TestCase const*, std::_Identity<Catch::TestCase const*>, std::less<Catch::TestCase const*>, std::allocator<Catch::TestCase const*> >::_M_get_insert_unique_pos(Catch::TestCase const* const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+    1,009  /build/glibc-B3wQXB/glibc-2.31/elf/dl-error-skeleton.c:_dl_catch_error [/lib/x86_64-linux-gnu/libc-2.31.so]
+      999  ???:Catch::AssertionHandler::handleExpr(Catch::ITransientExpression const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+      992  ???:Catch::TestRegistry::registerTest(Catch::TestCase const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+      976  ???:Catch::TestCaseTracking::SectionTracker::addNextFilters(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+      962  ???:Catch::clara::detail::ParserRefImpl<Catch::clara::detail::Opt>::~ParserRefImpl() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+      952  ???:Catch::RunContext::resetAssertionInfo() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+      950  ???:Catch::TestCaseStats::TestCaseStats(Catch::TestCaseInfo const&, Catch::Totals const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+      950  ???:QString::fromLatin1_helper(char const*, int) [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+      938  ???:__cxxabiv1::__vmi_class_type_info::__do_dyncast(long, __cxxabiv1::__class_type_info::__sub_kind, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__dyncast_result&) const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+      938  ???:std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+      925  ???:QString::QString(int, Qt::Initialization) [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+      913  /build/glibc-B3wQXB/glibc-2.31/malloc/malloc.c:_int_realloc [/lib/x86_64-linux-gnu/libc-2.31.so]
+      912  ???:QMutex::unlock() [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+      909  ???:QLocalePrivate::getLangAndCountry(QString const&, QLocale::Language&, QLocale::Script&, QLocale::Country&) [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+      908  ???:0x00000000001afa50 [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+      907  /build/glibc-B3wQXB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strcmp-avx2.S:__strncmp_avx2 [/lib/x86_64-linux-gnu/libc-2.31.so]
+      899  ???:QMutex::lock() [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+      896  /build/glibc-B3wQXB/glibc-2.31/wcsmbs/./wcsmbsload.h:btowc
+      872  ???:Catch::TestCaseTracking::TrackerBase::moveToThis() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+      864  ???:QString::resize(int) [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+      840  ???:Catch::uncaught_exceptions() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+      840  ???:__cxa_get_globals [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+      825  ???:Catch::Session::runInternal() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+      813  ???:____C_A_T_C_H____T_E_S_T____40() [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+      810  ???:MiceBoard::checkIsValidMovePhase0and2(int) const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+      810  ???:Player::id() const [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+      808  ???:Catch::AssertionStats::AssertionStats(Catch::AssertionResult const&, std::vector<Catch::MessageInfo, std::allocator<Catch::MessageInfo> > const&, Catch::Totals const&) [/home/faks/Desktop/projekat/2023_Analysis_SobaZabave/11-SobaZabave/test/Test/build/Test]
+      792  /build/glibc-B3wQXB/glibc-2.31/elf/dl-lookup.c:_dl_setup_hash [/lib/x86_64-linux-gnu/ld-2.31.so]
+      775  ???:0x00000000001d3110 [/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8]
+      774  ???:0x000000000006f180 [/usr/lib/x86_64-linux-gnu/libicuuc.so.66.1]
+      768  /build/glibc-B3wQXB/glibc-2.31/elf/dl-profstub.c:_dl_mcount_wrapper_check [/lib/x86_64-linux-gnu/libc-2.31.so]
+
+--------------------------------------------------------------------------------
+The following files chosen for auto-annotation could not be found:
+--------------------------------------------------------------------------------
+  /build/glibc-B3wQXB/glibc-2.31/ctype/ctype.c
+  /build/glibc-B3wQXB/glibc-2.31/dlfcn/dlerror.c
+  /build/glibc-B3wQXB/glibc-2.31/dlfcn/dlsym.c
+  /build/glibc-B3wQXB/glibc-2.31/elf/../elf/dl-runtime.c
+  /build/glibc-B3wQXB/glibc-2.31/elf/../sysdeps/generic/ldsodefs.h
+  /build/glibc-B3wQXB/glibc-2.31/elf/../sysdeps/posix/dl-fileid.h
+  /build/glibc-B3wQXB/glibc-2.31/elf/../sysdeps/x86/dl-prop.h
+  /build/glibc-B3wQXB/glibc-2.31/elf/../sysdeps/x86_64/dl-machine.h
+  /build/glibc-B3wQXB/glibc-2.31/elf/../sysdeps/x86_64/dl-trampoline.h
+  /build/glibc-B3wQXB/glibc-2.31/elf/../sysdeps/x86_64/tls_get_addr.S
+  /build/glibc-B3wQXB/glibc-2.31/elf/./dl-load.h
+  /build/glibc-B3wQXB/glibc-2.31/elf/./dl-map-segments.h
+  /build/glibc-B3wQXB/glibc-2.31/elf/dl-addr.c
+  /build/glibc-B3wQXB/glibc-2.31/elf/dl-cache.c
+  /build/glibc-B3wQXB/glibc-2.31/elf/dl-deps.c
+  /build/glibc-B3wQXB/glibc-2.31/elf/dl-error-skeleton.c
+  /build/glibc-B3wQXB/glibc-2.31/elf/dl-fini.c
+  /build/glibc-B3wQXB/glibc-2.31/elf/dl-init.c
+  /build/glibc-B3wQXB/glibc-2.31/elf/dl-load.c
+  /build/glibc-B3wQXB/glibc-2.31/elf/dl-lookup.c
+  /build/glibc-B3wQXB/glibc-2.31/elf/dl-minimal.c
+  /build/glibc-B3wQXB/glibc-2.31/elf/dl-misc.c
+  /build/glibc-B3wQXB/glibc-2.31/elf/dl-object.c
+  /build/glibc-B3wQXB/glibc-2.31/elf/dl-open.c
+  /build/glibc-B3wQXB/glibc-2.31/elf/dl-profstub.c
+  /build/glibc-B3wQXB/glibc-2.31/elf/dl-reloc.c
+  /build/glibc-B3wQXB/glibc-2.31/elf/dl-sort-maps.c
+  /build/glibc-B3wQXB/glibc-2.31/elf/dl-sym.c
+  /build/glibc-B3wQXB/glibc-2.31/elf/dl-tunables.c
+  /build/glibc-B3wQXB/glibc-2.31/elf/dl-tunables.h
+  /build/glibc-B3wQXB/glibc-2.31/elf/dl-version.c
+  /build/glibc-B3wQXB/glibc-2.31/elf/do-rel.h
+  /build/glibc-B3wQXB/glibc-2.31/elf/get-dynamic-info.h
+  /build/glibc-B3wQXB/glibc-2.31/elf/rtld.c
+  /build/glibc-B3wQXB/glibc-2.31/io/../sysdeps/unix/sysv/linux/open64_nocancel.c
+  /build/glibc-B3wQXB/glibc-2.31/libio/fileops.c
+  /build/glibc-B3wQXB/glibc-2.31/libio/iofwrite.c
+  /build/glibc-B3wQXB/glibc-2.31/malloc/malloc.c
+  /build/glibc-B3wQXB/glibc-2.31/misc/../sysdeps/unix/sysv/linux/mmap64.c
+  /build/glibc-B3wQXB/glibc-2.31/nptl/../nptl/pthread_mutex_lock.c
+  /build/glibc-B3wQXB/glibc-2.31/nptl/../nptl/sigaction.c
+  /build/glibc-B3wQXB/glibc-2.31/nptl/../sysdeps/unix/sysv/linux/internal-signals.h
+  /build/glibc-B3wQXB/glibc-2.31/nptl/../sysdeps/unix/sysv/linux/sigaction.c
+  /build/glibc-B3wQXB/glibc-2.31/nptl/pthread_mutex_unlock.c
+  /build/glibc-B3wQXB/glibc-2.31/setjmp/../sysdeps/x86_64/setjmp.S
+  /build/glibc-B3wQXB/glibc-2.31/signal/../sysdeps/unix/syscall-template.S
+  /build/glibc-B3wQXB/glibc-2.31/stdlib/cxa_atexit.c
+  /build/glibc-B3wQXB/glibc-2.31/stdlib/cxa_finalize.c
+  /build/glibc-B3wQXB/glibc-2.31/stdlib/exit.c
+  /build/glibc-B3wQXB/glibc-2.31/stdlib/getenv.c
+  /build/glibc-B3wQXB/glibc-2.31/string/../sysdeps/x86_64/multiarch/../strchr.S
+  /build/glibc-B3wQXB/glibc-2.31/string/../sysdeps/x86_64/multiarch/../strlen.S
+  /build/glibc-B3wQXB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memchr-avx2.S
+  /build/glibc-B3wQXB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memcmp-avx2-movbe.S
+  /build/glibc-B3wQXB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S
+  /build/glibc-B3wQXB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memset-vec-unaligned-erms.S
+  /build/glibc-B3wQXB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strcmp-avx2.S
+  /build/glibc-B3wQXB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strlen-avx2.S
+  /build/glibc-B3wQXB/glibc-2.31/string/../sysdeps/x86_64/strcmp.S
+  /build/glibc-B3wQXB/glibc-2.31/string/strdup.c
+  /build/glibc-B3wQXB/glibc-2.31/time/../sysdeps/unix/sysv/linux/clock_gettime.c
+  /build/glibc-B3wQXB/glibc-2.31/wcsmbs/./wcsmbsload.h
+  /build/glibc-B3wQXB/glibc-2.31/wcsmbs/btowc.c
+  /build/glibc-B3wQXB/glibc-2.31/wcsmbs/wctob.c
+  /build/glibc-B3wQXB/glibc-2.31/wctype/wctype_l.c
+

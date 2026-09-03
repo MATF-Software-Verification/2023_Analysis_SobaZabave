@@ -414,9 +414,180 @@ Analiza je omogućila uvid u ponašanje aplikacije tokom stvarnog izvršavanja i
 
 ---
 
+
 ## 5. Profilisanje performansi — Callgrind
 
-*Ovo poglavlje biće dopunjeno nakon analize.*
+Za detaljniju analizu izvršavanja funkcija korišćen je alat **Callgrind**, koji je deo Valgrind paketa. Callgrind prikuplja informacije o izvršavanju programa i omogućava uvid u broj instrukcionih referenci pojedinačnih funkcija i odnose između poziva funkcija.
+
+Korišćena je verzija Valgrind-a:
+
+```text
+valgrind-3.15.0
+```
+
+Za razliku od Perf analize, koja je izvršena nad kompletnom GUI aplikacijom tokom igranja igre Mice, Callgrind je pokrenut nad postojećim testnim izvršnim programom projekta. Na ovaj način je analizirano izvršavanje većeg dela logike igara Mice i Othello uz manji uticaj GUI okruženja i bibliotečkih funkcija. Postojeći testovi su u ovom slučaju korišćeni samo kao način za izvršavanje projektne logike, a ne kao posebna tehnika verifikacije.
+
+Za automatizovano pokretanje analize napravljena je skripta `run_callgrind.sh`:
+
+```bash
+#!/bin/bash
+
+TEST="../11-SobaZabave/test/Test/build/Test"
+DATA_FILE="callgrind.out"
+REPORT_FILE="callgrind_report.txt"
+PROJECT_REPORT_FILE="callgrind_project_report.txt"
+
+echo "Running Callgrind analysis..."
+
+valgrind --tool=callgrind \
+    --callgrind-out-file="$DATA_FILE" \
+    "$TEST"
+
+echo "Generating Callgrind report..."
+
+callgrind_annotate \
+    --auto=yes \
+    "$DATA_FILE" \
+    > "$REPORT_FILE"
+
+echo "Extracting project functions..."
+
+{
+    head -24 "$REPORT_FILE"
+    grep -E "Mice|Othello|Othellostate|Board|Game" "$REPORT_FILE"
+} > "$PROJECT_REPORT_FILE"
+
+echo "Callgrind analysis finished."
+echo "Full report saved to: $REPORT_FILE"
+echo "Project report saved to: $PROJECT_REPORT_FILE"
+```
+
+Opcijom `--tool=callgrind` bira se Callgrind alat, dok se pomoću `--callgrind-out-file` definiše fajl u koji se upisuju prikupljeni podaci. Nakon završetka izvršavanja, naredba `callgrind_annotate` pretvara dobijene podatke u tekstualni izveštaj `callgrind_report.txt`.
+
+Pošto kompletan izveštaj sadrži i veliki broj funkcija standardnih i korišćenih biblioteka, dodatno je napravljen fajl `callgrind_project_report.txt`. U njemu je sačuvano zaglavlje originalnog izveštaja, kao i izdvojene funkcije koje pripadaju analiziranom projektu. Originalni izveštaj pri tome ostaje neizmenjen.
+
+![Pokretanje Callgrind analize](screenshots/callgrind1.png)
+
+**Slika 16:** Pokretanje Callgrind analize i generisanje izveštaja.
+
+Tokom Callgrind analize izvršen je postojeći testni program projekta. Svi testovi su uspešno završeni:
+
+```text
+All tests passed (119 assertions in 19 test cases)
+```
+
+Poruka `Connection refused`, koja se pojavljuje tokom izvršavanja, potiče od pokušaja povezivanja klijentskog dela aplikacije i ne predstavlja grešku samog Callgrind alata.
+
+Callgrind je u ovom izvršavanju pratio događaj `Ir` (*instruction references*). Ukupan broj zabeleženih instrukcionih referenci bio je:
+
+```text
+15,811,256  PROGRAM TOTALS
+```
+
+Vrednost `Ir` predstavlja broj instrukcionih referenci koje su zabeležene tokom analiziranog izvršavanja. Veća vrednost ne označava automatski grešku ili lošu implementaciju, već pokazuje da je određena funkcija tokom posmatranog izvršavanja imala veći udeo u izvršenim instrukcijama.
+
+![Izdvojene funkcije projekta](screenshots/callgrind2.png)
+
+**Slika 17:** Izdvojene funkcije projekta sa većim brojem instrukcionih referenci.
+
+Među izdvojenim funkcijama projekta primećene su sledeće vrednosti:
+
+```text
+213,386  OthelloStateController::isPossibleMove(...)
+ 55,926  Othellostate::getTableField(...)
+ 47,120  MiceBoard::initializePositions()
+ 17,562  OthelloStateController::getNextValidMoves(...)
+ 17,267  OthelloStateController::playMove(...)
+ 15,375  OthelloMinMax::HeuristicScore(...)
+ 11,149  MiceBoard::getValidMovementsPhase1(...)
+```
+
+### Analiza funkcije `isPossibleMove`
+
+Među izdvojenim projektnim funkcijama najveći broj instrukcionih referenci ima funkcija `OthelloStateController::isPossibleMove`, sa 213.386 zabeleženih `Ir`.
+
+Lokacija funkcije u projektu može se pronaći sledećom naredbom:
+
+```bash
+grep -R -n "isPossibleMove" \
+  ../11-SobaZabave/SobaZabave/src/Client \
+  --include="*.cpp" --include="*.h"
+```
+
+Na ovaj način se vidi da se implementacija nalazi u fajlu `src/Client/src/othellostatecontroller.cpp`. Relevantni deo izvornog koda može se prikazati naredbom:
+
+```bash
+sed -n '95,140p' \
+  ../11-SobaZabave/SobaZabave/src/Client/src/othellostatecontroller.cpp
+```
+
+Funkcija `getNextValidMoves` prolazi kroz polja Othello table pomoću dve ugnježdene petlje. Za prazna polja poziva funkciju `isPossibleMove`, koja zatim prolazi kroz moguće pravce i proverava stanje susednih polja. U zavisnosti od rasporeda figura, provera može da nastavi prolazak kroz polja u određenom pravcu.
+
+Zbog toga se `isPossibleMove` može izvršavati veliki broj puta tokom određivanja validnih poteza, što objašnjava njenu veću `Ir` vrednost u dobijenom Callgrind izveštaju.
+
+![Implementacija funkcije isPossibleMove](screenshots/callgrind3.png)
+
+**Slika 18:** Deo implementacije funkcije `isPossibleMove` i njen poziv prilikom određivanja validnih poteza.
+
+### Analiza funkcije `getTableField`
+
+Sledeća izdvojena funkcija sa većim brojem instrukcionih referenci je:
+
+```text
+Othellostate::getTableField(...)    55,926 Ir
+```
+
+Njena pojavljivanja u projektu mogu se pronaći naredbom:
+
+```bash
+grep -R -n "getTableField" \
+  ../11-SobaZabave/SobaZabave/src/Client \
+  --include="*.cpp" --include="*.h"
+```
+
+Rezultat pokazuje da se funkcija koristi na više mesta u Othello logici, između ostalog u klasama `OthelloGame`, `OthelloMinMax` i `OthelloStateController`.
+
+Sama implementacija funkcije je veoma jednostavna:
+
+```cpp
+auto Othellostate::getTableField(int row, int column) const -> int {
+  return table[row][column];
+}
+```
+
+Zbog toga njena relativno visoka `Ir` vrednost nije posledica složenosti same funkcije. Funkcija se koristi za pristup stanju polja table i poziva se na velikom broju mesta, uključujući i petlje koje obilaze tablu. Veći broj instrukcionih referenci zato se može objasniti njenim čestim izvršavanjem.
+
+### Analiza funkcije `initializePositions`
+
+Funkcija `MiceBoard::initializePositions` imala je 47.120 instrukcionih referenci.
+
+Njena lokacija može se pronaći pomoću:
+
+```bash
+grep -R -n "initializePositions" \
+  ../11-SobaZabave/SobaZabave/src/Client \
+  --include="*.cpp" --include="*.h"
+```
+
+Implementacija se nalazi u fajlu `src/Client/src/miceboard.cpp`:
+
+```cpp
+void MiceBoard::initializePositions() {
+  for (int i = 0; i < numberOfFields; i++) {
+    m_emptyPositions.insert(i);
+  }
+}
+```
+
+Funkcija prilikom inicijalizacije prolazi kroz sva polja table i za svako polje izvršava operaciju `insert` nad kolekcijom praznih pozicija. Zbog ponavljanja ove operacije unutar petlje, funkcija tokom inicijalizacije izvršava veći broj instrukcija, što objašnjava njeno pojavljivanje među funkcijama sa većim `Ir` vrednostima.
+
+### Zaključak Callgrind analize
+
+Callgrind analiza nije ukazala na konkretnu funkcionalnu grešku, ali je omogućila izdvajanje delova projektne logike koji tokom analiziranog izvršavanja imaju veći broj instrukcionih referenci.
+
+Najizraženiji rezultat među izdvojenim projektnim funkcijama predstavlja `OthelloStateController::isPossibleMove`. Analizom izvornog koda utvrđeno je da se ova funkcija poziva prilikom određivanja validnih poteza i da sama vrši dodatne provere u više pravaca na tabli. Kod funkcije `getTableField` veći broj instrukcionih referenci može se povezati sa njenim čestim pozivanjem iz različitih delova Othello logike, dok `initializePositions` tokom inicijalizacije prolazi kroz sva polja Mice table.
+
+Na ovaj način Callgrind dopunjuje prethodnu Perf analizu. Perf je korišćen nad kompletnom GUI aplikacijom i pokazao je značajan uticaj bibliotečkih funkcija, dok je Callgrind nad postojećim testnim izvršnim programom omogućio detaljniji pregled izvršavanja same logike projekta.
 
 ---
 
